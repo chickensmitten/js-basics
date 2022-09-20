@@ -3,7 +3,8 @@ const defaultResult = 0;
 let currentResult = defaultResult;
 
 function add() {
-  currentResult = currentResult + userInput.value;
+  currentResult = currentResult + parseInt(userInput.value);
+  // currentResult = currentResult + +userInput.value;
   outputResult(currentResult, ""); 
   // if this is not added in this function, when add is click, there's be no output
 }
