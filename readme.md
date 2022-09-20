@@ -53,6 +53,10 @@
 - arrays: `[1, "3", True]`
 
 **Special Values**
-`undefined`: default value of uninitialized variables. You shouldn't assign undefined as a value
-`null`: never assumed by default. You have to set this with equals.
-`NaN`: stands for Not a Number. Technically a number type. `3 * "hi"` yields `NaN`
+- `undefined`: default value of uninitialized variables. You shouldn't assign undefined as a value
+- `null`: never assumed by default. You have to set this with equals.
+- `NaN`: stands for Not a Number. Technically a number type. `3 * "hi"` yields `NaN`
+
+**typeof operator**
+- typeof is used to check the type of a variable at runtime.
+- `userName = "Max"`, then use `typeof userName` will return `string`
