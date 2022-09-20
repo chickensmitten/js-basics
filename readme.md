@@ -40,3 +40,8 @@
 ##Converting Data Types
 - one line comment using `// <content>`
 - multiple line comment using `/* <content> */` 
+
+##Operators
+- `++<value>` return value after the change
+- `<value>--` return value before the change
+- other operators: `+=`, `-=`, `*=`, `/=`, `**` exponentiation, `%` divide two numbers yielding remainder.
