@@ -31,3 +31,7 @@
 - it is predefined first. It doesn't get executed. then you call the function with parameters if there's any
 - parenthesis with arguments will execute the code when the page is loaded. e.g. `add(1,2)` is a parenthesis with argument. `add` is just a function. Assuming the function is defined earlier.
 **[Click here for more details](/documentation/01_functions-explained.md)**
+
+##Converting Data Types
+- use `parseInt(<value>)` to convert a string to int. you can also put `+<value>` in front of the string.
+**[Click here for more details](/documentation/02_mixing-numbers-and-strings.md)
