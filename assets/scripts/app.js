@@ -6,6 +6,8 @@ function getUserInput() {
   return parseInt(usrInput.value);
 }
 
+
+
 function createAndWriteOutput(operator, resultBeforeCalc, calcNumber) {
   const calcDescription = `${resultBeforeCalc} ${operator} ${calcNumber}`;
   outputResult(currentResult, calcDescription);

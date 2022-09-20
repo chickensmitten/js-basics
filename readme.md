@@ -36,3 +36,7 @@
 - use `parseInt(<value>)` to convert a string to int. you can also put `+<value>` in front of the string.
 - embed syntax like `${<value>}` auto converts everything within it into string.
 **[Click here for more details](/documentation/02_mixing-numbers-and-strings.md)
+
+##Converting Data Types
+- one line comment using `// <content>`
+- multiple line comment using `/* <content> */` 
