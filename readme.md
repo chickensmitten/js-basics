@@ -32,16 +32,22 @@
 - parenthesis with arguments will execute the code when the page is loaded. e.g. `add(1,2)` is a parenthesis with argument. `add` is just a function. Assuming the function is defined earlier.
 **[Click here for more details](/documentation/01_functions-explained.md)**
 
-##Converting Data Types
+## Converting Data Types
 - use `parseInt(<value>)` to convert a string to int. you can also put `+<value>` in front of the string.
 - embed syntax like `${<value>}` auto converts everything within it into string.
 **[Click here for more details](/documentation/02_mixing-numbers-and-strings.md)
 
-##Converting Data Types
+## Commenting
 - one line comment using `// <content>`
 - multiple line comment using `/* <content> */` 
 
-##Operators
+## Operators
 - `++<value>` return value after the change
 - `<value>--` return value before the change
 - other operators: `+=`, `-=`, `*=`, `/=`, `**` exponentiation, `%` divide two numbers yielding remainder.
+
+## Additional Data Types
+- numbers, string, booleans, objects, arrays
+- booleans `true` or `false`
+- objects: `{ name: "Max", age: 31 }`
+- arrays: `[1, "3", True]`
