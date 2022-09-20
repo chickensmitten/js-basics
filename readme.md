@@ -24,3 +24,4 @@
 - backticks also allow multiple lines
 - using `white-space: pre;` backticks with white spaces will add line break spacing.
 - using `\n` for normal double quotes will add line break spacing
+- to have backslash or single quotes string, put backslash in front of it `\\` `\'`
