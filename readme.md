@@ -62,5 +62,6 @@
 - `userName = "Max"`, then use `typeof userName` will return `string`
 
 ## Importing scripts properly
+- `defer` and `async` is only works for external scripts. Internal scripts inside the documents doesn't benefit from them.
 - `defer` load early, execute later. Scripts with defer never block the page. Scripts with defer always execute when the DOM is ready (but before DOMContentLoaded event).
 - `async` load early, execute as soon as possible. The page content shows up immediately: async doesn’t block it. DOMContentLoaded may happen both before and after async, no guarantees here.
