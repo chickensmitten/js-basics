@@ -65,3 +65,7 @@
 - `defer` and `async` is only works for external scripts. Internal scripts inside the documents doesn't benefit from them.
 - `defer` load early, execute later. Scripts with defer never block the page. Scripts with defer always execute when the DOM is ready (but before DOMContentLoaded event).
 - `async` load early, execute as soon as possible. The page content shows up immediately: async doesn’t block it. DOMContentLoaded may happen both before and after async, no guarantees here.
+- for images and diagrams, 
+[add js to page](/public/add-js-to-page.png)
+[import script](/public/import-scripts.png)
+[timeline summary](/public/timeline-summary.png)
