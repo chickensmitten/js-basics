@@ -22,3 +22,5 @@
 - regarding single quotes or double quotes. Feel free to use it accordingly. But be consistent
 - use backticks to add dynamic values like `${}`
 - backticks also allow multiple lines
+- using `white-space: pre;` backticks with white spaces will add line break spacing.
+- using `\n` for normal double quotes will add line break spacing
