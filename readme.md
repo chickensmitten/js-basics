@@ -60,3 +60,7 @@
 **typeof operator**
 - typeof is used to check the type of a variable at runtime.
 - `userName = "Max"`, then use `typeof userName` will return `string`
+
+## Importing scripts properly
+- `defer` load early, execute later. Scripts with defer never block the page. Scripts with defer always execute when the DOM is ready (but before DOMContentLoaded event).
+- `async` load early, execute as soon as possible. The page content shows up immediately: async doesn’t block it. DOMContentLoaded may happen both before and after async, no guarantees here.
