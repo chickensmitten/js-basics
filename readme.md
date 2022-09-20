@@ -25,3 +25,8 @@
 - using `white-space: pre;` backticks with white spaces will add line break spacing.
 - using `\n` for normal double quotes will add line break spacing
 - to have backslash or single quotes string, put backslash in front of it `\\` `\'`
+
+## Functions
+- functions are code on demand
+- it is predefined first. It doesn't get executed. then you call the function with parameters if there's any
+- parenthesis with arguments will execute the code when the page is loaded. e.g. `add(1,2)` is a parenthesis with argument. `add` is just a function. Assuming the function is defined earlier.
