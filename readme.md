@@ -16,3 +16,9 @@
 - starting with digit: `let21Players`
 - no other special characters: `let user-b`
 - reserved keywords: `let let`
+
+## Operators and data types in JS
+- just google them
+- regarding single quotes or double quotes. Feel free to use it accordingly. But be consistent
+- use backticks to add dynamic values like `${}`
+- backticks also allow multiple lines
