@@ -51,3 +51,8 @@
 - booleans `true` or `false`
 - objects: `{ name: "Max", age: 31 }`
 - arrays: `[1, "3", True]`
+
+**Special Values**
+`undefined`: default value of uninitialized variables. You shouldn't assign undefined as a value
+`null`: never assumed by default. You have to set this with equals.
+`NaN`: stands for Not a Number. Technically a number type. `3 * "hi"` yields `NaN`
