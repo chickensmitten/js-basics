@@ -17,8 +17,12 @@
 - no other special characters: `let user-b`
 - reserved keywords: `let let`
 
-## Operators and data types in JS
-- just google them
+## Strings and Commenting
+**Commenting**
+- one line comment using `// <content>`
+- multiple line comment using `/* <content> */` 
+
+**More on Strings in JS**
 - regarding single quotes or double quotes. Feel free to use it accordingly. But be consistent
 - use backticks to add dynamic values like `${}`
 - backticks also allow multiple lines
@@ -36,15 +40,6 @@
 - use `parseInt(<value>)` to convert a string to int. you can also put `+<value>` in front of the string.
 - embed syntax like `${<value>}` auto converts everything within it into string.
 **[Click here for more details](/documentation/02_mixing-numbers-and-strings.md)
-
-## Commenting
-- one line comment using `// <content>`
-- multiple line comment using `/* <content> */` 
-
-## Operators
-- `++<value>` return value after the change
-- `<value>--` return value before the change
-- other operators: `+=`, `-=`, `*=`, `/=`, `**` exponentiation, `%` divide two numbers yielding remainder.
 
 ## Additional Data Types
 - numbers, string, booleans, objects, arrays
@@ -71,7 +66,12 @@
 - [Debugging with browser](https://www.udemy.com/course/javascript-the-complete-guide-2020-beginner-advanced/learn/lecture/15918028#questions)
 - [Debugging with VS code](https://www.udemy.com/course/javascript-the-complete-guide-2020-beginner-advanced/learn/lecture/16991828#questions)
 
-## Boolean Operators and Conditions
+## Operators
+- `++<value>` return value after the change
+- `<value>--` return value before the change
+- other operators: `+=`, `-=`, `*=`, `/=`, `**` exponentiation, `%` divide two numbers yielding remainder.
+
+**Boolean Operators and Conditions**
 - `===` is better than `==`. `!==` is better than `!=`. This is because it not only checks for value, but also checks for type.
 - when comparing strings, `b` is greater than `a` because JS compares Unicode values.
 - `condition` in `if (condition) {}` should be just a boolean. Example below. Redundant to add an equation inside the condition. [Click here for more details](documentation/03_booleans-text-comparisons)
@@ -92,4 +92,18 @@ person1 === person2 // yields false
 
 const person3 = person1
 person3 === person1 // yields true
+```
+
+**Operator Precedence**
+- [Click here for a list of operator procedence](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence)
+
+**Falsy and Truthy Values**
+- It is mainly used to ensure that a value is not `""`, `0`, `null`, `undefined`, `NaN`. [Click here for flasy and truthy values](/public/flasy-truthy-values.png)
+- Sometimes we have functions that doesn't work with falsy values. [Click here for flasy and truthy explained](/public/falsy-truthy-explained.png)
+- JS tries to coerce a variable into boolean with no explicit instructions are given. It doesn't convert the variable into true or false statements though. [Click here for coercion vs conversion](/documentation/04_coercion-vs-conversion.md)
+```
+let userInput = 'Max';
+if (userInput) {
+    ... // this code here will execute because 'Max' is "truthy" (all strings but empty strings are)
+}
 ```
