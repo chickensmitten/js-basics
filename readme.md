@@ -107,3 +107,13 @@ if (userInput) {
     ... // this code here will execute because 'Max' is "truthy" (all strings but empty strings are)
 }
 ```
+
+## Ternary Operator vs Conditional Expressions
+- this is a ternary operator `const userName = isLogin ? "MAX" : null` without which you will write longer code like below
+```
+const userName = if (isLogin) {
+    return "Max";
+} else {
+    return null;
+}
+```
