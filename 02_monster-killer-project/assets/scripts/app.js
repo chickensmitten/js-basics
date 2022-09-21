@@ -171,7 +171,49 @@ function healPlayerHandler() {
 }
 
 function printLogHandler() {
-  console.log(battleLog);
+  // FOR & FOR-IN
+  console.log('### FOR BATTLE LOG ###');
+  for (let i = 0; i < battleLog.length; i++) {
+    // i can increment more than one. e.g. i + 3
+    const log = battleLog[i];
+    console.log('# FOR-IN LOOP #');
+    for (const key in log) {
+      console.log(
+        `
+          key : ${key},
+          value : ${log[key]}
+        `
+      )
+    }
+    console.log('###############');
+  }
+  console.log('#######################');
+
+  // FOR-OF
+  console.log('### FOR-OF BATTLE LOG ###');
+  for (const log of battleLog) {
+    // don't know index
+    console.log(
+      `${log.target} => ${log.value} ${log.event} ${log.finalMonsterHealth} ${log.finalPlayerHealth}`
+    );
+  }
+  console.log('#########################');
+
+  // WHILE
+  console.log('### WHILE BATTLE LOG ###');
+  let j = 0;
+  while (j < battleLog.length) {    
+    const log = battleLog[j];
+    console.log(
+      log.event + "\n" +      
+      log.target + "\n" +      
+      log.value + "\n" +
+      log.finalMonsterHealth + "\n" +
+      log.finalPlayerHealth
+    );    
+    j++;
+  }
+  console.log('########################');
 }
 
 attackBtn.addEventListener('click', attackHandler);

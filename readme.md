@@ -126,3 +126,30 @@ const userName = if (isLogin) {
     return null;
 }
 ```
+
+## Loops
+- `for loop`: execute code a certain amount of times (with counter variable).
+```
+for (let i = 0; i < 3; i++) {
+    console.log(i);
+}
+```
+- `for-of loop`: execute for every element in an array.
+```
+for (const el of array) {
+    console.log(i);
+}
+```
+- `for-in loop`: execute for every key in an object
+```
+for (const key in obj) {
+    console.log(key);
+    console.log(obj[key]);
+}
+```
+- `while loop`: execute code as long as condition is true
+```
+while (isLoggedIn) {
+    ...
+}
+```
