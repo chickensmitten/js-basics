@@ -45,6 +45,16 @@
 - embed syntax like `${<value>}` auto converts everything within it into string. 
 - [Click here for more details](/documentation/02_mixing-numbers-and-strings.md)
 
+**Primitive Values vs Reference Values**
+- Primitive values: strings, numbers, booleans, null, undefined, Symbol
+    - Typically stored in the Stack (not the heap)
+    - Variable stores value itself
+    - Copying a variable, copies the value
+
+- Reference Values: All other objects. Arrays are a type of object.
+    - Stores in memory (Heap). Variables stores a pointer (address) to location in memory.
+    - Copying a varialbe, only copies the pointer/reference.
+
 
 **Special Values**
 - `undefined`: default value of uninitialized variables. You shouldn't assign undefined as a value
@@ -162,3 +172,32 @@ while (isLoggedIn) {
 - `try {} catch (error) {} finally {}`
 - `throw <variable>;` sometimes maybe you want to throw error inside `catch () {}`. First thrown because it is for your servers, then throw again for your analytics
 - `finally {}` always execute whenever you have a catch error or not. maybe can be used to clean up variables or release data etc.
+
+## Strict mode
+- using `"use strict;"` at the beginning of a page will disable certain [javascript behaviours](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode#changes_in_strict_mode)
+
+## Garbage Collection
+- How is memory in Heap managed? It is managed with Garbage Collection (GC).
+- GC periodically checks the Heap for unused objects, then removes it automatically.
+- Still have to beware of memory leaks. e.g. it happens when you create an anonymous function (i.e. a function that doesnt have a name) with the same function as a normal lydeclared function.
+
+This leaks memory
+```
+function doCalculations() {
+    // ... do calculations
+}
+
+function doSomething("click", function() {
+    // ... do calculations
+});
+
+```
+This doesn't leak memory
+```
+function doCalculations() {
+    // ... do calculations
+}
+
+function doSomething("click", doCalculations);
+```
+- [Click here for more about memory leaks](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management)
