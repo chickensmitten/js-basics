@@ -29,6 +29,9 @@ function writeToLog(
 }
 
 function calculateResult(calculationType) {
+  const enteredNumber = getUserInput();
+  const initialResult = currentResult;
+  let mathOperator;  
   // this is a better conditional code usage
   if (
     calculationType !== 'ADD' &&
@@ -49,9 +52,6 @@ function calculateResult(calculationType) {
   //   // add the code below
   // }
   
-  const enteredNumber = getUserInput();
-  const initialResult = currentResult;
-  let mathOperator;
   if (calculationType === 'ADD') {
     currentResult += enteredNumber;
     mathOperator = '+';
