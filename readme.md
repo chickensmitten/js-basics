@@ -108,6 +108,15 @@ if (userInput) {
 }
 ```
 
+**Boolean Tricks with Logical Operators**
+- `!!` converts truthy value into true value (e.g. !!1) or falsy value into false value (e.g. !!"")
+- `||` returns the first value if the value is truthy. else returns the second value if is falsy.
+- `&&` returns the second value if the first value is truthy. Else return nothing
+- this is very useful for clean conditional code for html
+- [Click here for quick illustration](/public/boolean-tricks.png)
+- [Click here for summary of logical operators](/documentation/05_logical-operators-summary)
+
+
 ## Ternary Operator vs Conditional Expressions
 - this is a ternary operator `const userName = isLogin ? "MAX" : null` without which you will write longer code like below
 ```
