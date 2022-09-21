@@ -128,6 +128,7 @@ const userName = if (isLogin) {
 ```
 
 ## Loops
+**for for-of for-in while**
 - `for loop`: execute code a certain amount of times (with counter variable).
 ```
 for (let i = 0; i < 3; i++) {
@@ -153,3 +154,6 @@ while (isLoggedIn) {
     ...
 }
 ```
+**break and continue loop**
+- `break` stops the entire loop
+- `continue` jumps to next loop cycle
