@@ -71,7 +71,7 @@
 - [Debugging with browser](https://www.udemy.com/course/javascript-the-complete-guide-2020-beginner-advanced/learn/lecture/15918028#questions)
 - [Debugging with VS code](https://www.udemy.com/course/javascript-the-complete-guide-2020-beginner-advanced/learn/lecture/16991828#questions)
 
-## Boolean Operators
+## Boolean Operators and Conditions
 - `===` is better than `==`. `!==` is better than `!=`. This is because it not only checks for value, but also checks for type.
 - when comparing strings, `b` is greater than `a` because JS compares Unicode values.
 - `condition` in `if (condition) {}` should be just a boolean. Example below. Redundant to add an equation inside the condition. [Click here for more details](documentation/03_booleans-text-comparisons)
@@ -80,4 +80,16 @@ const isLoggedIn = true;
 if (isLoggedIn) {
     // This code will execute because isLoggedIn is true => A valid condition
 }
+```
+
+**Comparing Objects**
+- Two same objects stored in different variables, when compared with `===` and `==` are not the same. e.g.
+```
+const person1 = {name: "Max"}
+const person2 = {name: "Max"}
+
+person1 === person2 // yields false
+
+const person3 = person1
+person3 === person1 // yields true
 ```
