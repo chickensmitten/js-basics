@@ -36,16 +36,15 @@
 - parenthesis with arguments will execute the code when the page is loaded. e.g. `add(1,2)` is a parenthesis with argument. `add` is just a function. Assuming the function is defined earlier.
 **[Click here for more details](/documentation/01_functions-explained.md)**
 
-## Converting Data Types
-- use `parseInt(<value>)` to convert a string to int. you can also put `+<value>` in front of the string.
-- embed syntax like `${<value>}` auto converts everything within it into string.
-**[Click here for more details](/documentation/02_mixing-numbers-and-strings.md)
-
-## Additional Data Types
+## Data Types
 - numbers, string, booleans, objects, arrays
 - booleans `true` or `false`
 - objects: `{ name: "Max", age: 31 }`
 - arrays: `[1, "3", True]`
+- use `parseInt(<value>)` to convert a string to int. you can also put `+<value>` in front of the string.
+- embed syntax like `${<value>}` auto converts everything within it into string. 
+- [Click here for more details](/documentation/02_mixing-numbers-and-strings.md)
+
 
 **Special Values**
 - `undefined`: default value of uninitialized variables. You shouldn't assign undefined as a value
@@ -157,3 +156,9 @@ while (isLoggedIn) {
 **break and continue loop**
 - `break` stops the entire loop
 - `continue` jumps to next loop cycle
+
+## Error Handling with Try Catch
+- Typical errors are user inputs and network errors
+- `try {} catch (error) {} finally {}`
+- `throw <variable>;` sometimes maybe you want to throw error inside `catch () {}`. First thrown because it is for your servers, then throw again for your analytics
+- `finally {}` always execute whenever you have a catch error or not. maybe can be used to clean up variables or release data etc.
