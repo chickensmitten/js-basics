@@ -30,12 +30,6 @@
 - using `\n` for normal double quotes will add line break spacing
 - to have backslash or single quotes string, put backslash in front of it `\\` `\'`
 
-## Functions
-- functions are code on demand
-- it is predefined first. It doesn't get executed. then you call the function with parameters if there's any
-- parenthesis with arguments will execute the code when the page is loaded. e.g. `add(1,2)` is a parenthesis with argument. `add` is just a function. Assuming the function is defined earlier.
-**[Click here for more details](/documentation/01_functions-explained.md)**
-
 ## Data Types
 - numbers, string, booleans, objects, arrays
 - booleans `true` or `false`
@@ -123,7 +117,7 @@ if (userInput) {
 - `&&` returns the second value if the first value is truthy. Else return nothing
 - this is very useful for clean conditional code for html
 - [Click here for quick illustration](/public/boolean-tricks.png)
-- [Click here for summary of logical operators](/documentation/05_logical-operators-summary)
+- [Click here for summary of logical operators](/documentation/05_logical-operators-summary.md)
 
 
 ## Ternary Operator vs Conditional Expressions
@@ -201,3 +195,32 @@ function doCalculations() {
 function doSomething("click", doCalculations);
 ```
 - [Click here for more about memory leaks](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management)
+
+## Functions
+- functions are code on demand
+- it is predefined first. It doesn't get executed. then you call the function with parameters if there's any
+- parenthesis with arguments will execute the code when the page is loaded. e.g. `add(1,2)` is a parenthesis with argument. `add` is just a function. Assuming the function is defined earlier.
+- [Click here for more details on functions](/documentation/01_functions-explained.md)
+- [Click here for more details on paramters vs arguments](/documentation/06_paramters-arguments.md)
+- Adding functions inside an object
+```
+const person = {
+  greet: function greet() {
+    console.log("Hello There!");
+  }
+}
+
+person.greet();
+```
+
+**Anonymous Functions**
+
+
+**Callback Functions & Functions in Functions**
+
+
+**Default Arguments & Rest Operator**
+
+
+**bind() & more**
+
