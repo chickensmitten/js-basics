@@ -37,13 +37,13 @@ const anonFunction = function () {
 const add2 = function (a, b) {
   return a + b;
 };
-const nothing = () => {} // no arguments/parameters must have parentheses
-const minus = m => m += 1; // one argument/parameter
+const nothing = () => {}; // no arguments/parameters must have parentheses
+const minus = (m) => (m += 1); // one argument/parameter
 const add = (a, b) => a + b; // arrow functions allows you to shorten the code like a ternary expression without return and curly brackets, compared with above.
 (a, b) => {
   a *= 2;
   return a + b;
-} // if more than one expression in function body
+}; // if more than one expression in function body
 
 // declaring anonymous function inside a function
 startGameBtn.addEventListener('click', function () {
@@ -56,9 +56,31 @@ startGameBtn.addEventListener('click', function () {
 const add3 = function (a, b = 1) {
   return a + b;
 };
-add3(2) // order of arugments are important, 2 here is a.
-add3(2, undefined) // or if you pass in undefined, default arguments will be used. Other flasy values will not have this effect like null, NaN, 0.
-
+add3(2); // order of arugments are important, 2 here is a.
+add3(2, undefined); // or if you pass in undefined, default arguments will be used. Other flasy values will not have this effect like null, NaN, 0.
 const add4 = function (a, b = a === 2 ? 1 : 0) {
   return a + b;
 }; // you can use parameter that came before it like the ternary expression above.
+
+// Rest Operator or three dots. Allows you to take all your arguments and merge into an array
+const sumUp = (...numbers) => {
+  let sum = 0;
+  for (const num of numbers) {
+    sum += num;
+  }
+  return sum;
+};
+sumUp(1, 5, 10, -3, 6, 19);
+sumUp(1, 5, 10, -3, 6, 19, -34, 100);
+// below are not allowed
+// const wrongSum1 = (...numbers, a) => {}
+// const wrongSum2 = (...numbers, ...other) => {}
+// below are allowed
+// const wrongSum1 = (a, b, c, ...numbers) => {}
+const subtractDown = () => {
+  let sum = 0;
+  for (const num of arguments) {
+    sum -= num;
+  } // arguments provides an array like object. But don't use this
+  return sum;
+};
