@@ -58,3 +58,7 @@ const add3 = function (a, b = 1) {
 };
 add3(2) // order of arugments are important, 2 here is a.
 add3(2, undefined) // or if you pass in undefined, default arguments will be used. Other flasy values will not have this effect like null, NaN, 0.
+
+const add4 = function (a, b = a === 2 ? 1 : 0) {
+  return a + b;
+}; // you can use parameter that came before it like the ternary expression above.
