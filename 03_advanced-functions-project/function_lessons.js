@@ -10,7 +10,6 @@ const person = {
     console.log('Hello There!');
   },
 };
-
 person.greet();
 
 // using function as a declaration/statement
@@ -21,7 +20,6 @@ startGameBtn.addEventListener('click', startGame);
 
 // using function as an expression
 // cannot call endingGame before this function with function expressions
-
 endingGame(); // this is not allowed
 const endingGame = function endGame() {
   console.log('Game is ending...');
@@ -63,15 +61,15 @@ const add4 = function (a, b = a === 2 ? 1 : 0) {
 }; // you can use parameter that came before it like the ternary expression above.
 
 // Rest Operator or three dots. Allows you to take all your arguments and merge into an array
-const sumUp = (...numbers) => {
+const sumAgain = (...numbers) => {
   let sum = 0;
   for (const num of numbers) {
     sum += num;
   }
   return sum;
 };
-sumUp(1, 5, 10, -3, 6, 19);
-sumUp(1, 5, 10, -3, 6, 19, -34, 100);
+sumAgain(1, 5, 10, -3, 6, 19);
+sumAgain(1, 5, 10, -3, 6, 19, -34, 100);
 // below are not allowed
 // const wrongSum1 = (...numbers, a) => {}
 // const wrongSum2 = (...numbers, ...other) => {}
@@ -84,3 +82,24 @@ const subtractDown = () => {
   } // arguments provides an array like object. But don't use this
   return sum;
 };
+
+// Functions within functions
+const sumUp = (a, b, ...numbers) => {
+  const validateNumber = (number) => {
+    return isNaN(number) ? 0 : number;
+  };
+  return validateNumber;
+};
+
+// Callback function
+const sumCallBacks = (cb, ...numbers) => {
+  let sum = 0;
+  for (const num of numbers) {
+    sum += num;
+  }
+  cb(sum);
+};
+const showResult = (result) => {
+  alert('Show result of all added numbers' + result);
+};
+console.log(sumCallBacks(showResult, 1, 3, 4, 83));

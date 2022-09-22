@@ -202,20 +202,11 @@ function doSomething("click", doCalculations);
 - parenthesis with arguments will execute the code when the page is loaded. e.g. `add(1,2)` is a parenthesis with argument. `add` is just a function. Assuming the function is defined earlier.
 - [Click here for more details on functions](/documentation/01_functions-explained.md)
 - [Click here for more details on paramters vs arguments](/documentation/06_paramters-arguments.md)
-- [Click here for more details on advanced functions explained](/03_advanced-functions-project/function_lessons.js)
 - Function Declaration/Statements: Hoisted to the top, it can be declared anywhere in the file. Can call the function declaration/statement anywhere in the file
 - Function Expression: Hoisted to top but not initialised or defined. Can't be declared anywhere in the file. Has to be declared before it is called.
- - [Click here for more arrow functions syntax](/documentation/07_arrow-functions-syntax.md)
- - Rest Operators or three dots using `...<variable>`. refer to [Rest Operator Line in this file for more info](/03_advanced-functions-project/function_lessons.js)
-
-**Anonymous Functions**
-
-
-**Callback Functions & Functions in Functions**
+- [Click here for more arrow functions syntax](/documentation/07_arrow-functions-syntax.md)
+- For more information about advanced functions like Anonymous Functions, Callback Functions & Functions in Functions, Default Arguments & Rest Operator, bind() & more, [Click here](/03_advanced-functions-project/function_lessons.js)
+- Rest Operators or three dots using `...<variable>`. refer to [Rest Operator Line in this file for more info](/03_advanced-functions-project/function_lessons.js)
 
 
-**Default Arguments & Rest Operator**
-
-
-**bind() & more**
 
