@@ -103,3 +103,42 @@ const showResult = (result) => {
   alert('Show result of all added numbers' + result);
 };
 console.log(sumCallBacks(showResult, 1, 3, 4, 83));
+
+// about bind()
+// when .bind() is called as a method on your object, it will create a new function reference which is not immediately executed. It is prepared for future execution
+const combineForBind = (showResultHandler, operation, ...numbers) => {
+  let sum = 0;
+  for (const num of numbers) {
+    if (operation === 'ADD') {
+      sum += num;
+    } else {
+      sum -= num;
+    }
+  }
+  showResultHandler(sum); // because .bind() is used, sum will be after the message text written in the .bind() method
+};
+const showResult1 = (messageText, result) => {
+  alert(messageText + ' ' + result);
+};
+console.log(
+  combineForBind(
+    showResult1.bind(this, 'The result after adding all number is:'),
+    'ADD',
+    5,
+    3,
+    6,
+    3,
+    2
+  )
+);
+console.log(
+  combineForBind(
+    showResult1.bind(this, 'The result after subtracting all number is:'),
+    'SUBTRACT',
+    5,
+    3,
+    6,
+    3,
+    2
+  )
+);
