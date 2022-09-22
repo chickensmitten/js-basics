@@ -202,16 +202,9 @@ function doSomething("click", doCalculations);
 - parenthesis with arguments will execute the code when the page is loaded. e.g. `add(1,2)` is a parenthesis with argument. `add` is just a function. Assuming the function is defined earlier.
 - [Click here for more details on functions](/documentation/01_functions-explained.md)
 - [Click here for more details on paramters vs arguments](/documentation/06_paramters-arguments.md)
-- Adding functions inside an object
-```
-const person = {
-  greet: function greet() {
-    console.log("Hello There!");
-  }
-}
-
-person.greet();
-```
+- [Click here for more details on advanced functions explained](/03_advanced-functions-project/function_lessons.js)
+- Function Declaration/Statements: Hoisted to the top, it can be declared anywhere in the file. Can call the function declaration/statement anywhere in the file
+- Function Expression: Hoisted to top but not initialised or defined. Can't be declared anywhere in the file. Has to be declared before it is called.
 
 **Anonymous Functions**
 
