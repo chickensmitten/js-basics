@@ -42,19 +42,19 @@ const getWinner = (cChoice, pChoice) =>
     ? RESULT_PLAYER_WINS
     : RESULT_COMPUTER_WINS;
 
-  // if (cChoice == pChoice) {
-  //   return RESULT_DRAW;
-  // } else if (
-  //   (cChoice === ROCK && pChoice === PAPER) ||
-  //   (cChoice === PAPER && pChoice === SCISSORS) ||
-  //   (cChoice === SCISSORS && pChoice === ROCK)
-  // ) {
-  //   return RESULT_PLAYER_WINS;
-  // } else {
-  //   return RESULT_COMPUTER_WINS;
-  // }
+// if (cChoice == pChoice) {
+//   return RESULT_DRAW;
+// } else if (
+//   (cChoice === ROCK && pChoice === PAPER) ||
+//   (cChoice === PAPER && pChoice === SCISSORS) ||
+//   (cChoice === SCISSORS && pChoice === ROCK)
+// ) {
+//   return RESULT_PLAYER_WINS;
+// } else {
+//   return RESULT_COMPUTER_WINS;
+// }
 
-startGameBtn.addEventListener('click', function () {
+startGameBtn.addEventListener('click', () => {
   if (gameIsRunning) {
     return;
   }
@@ -63,5 +63,14 @@ startGameBtn.addEventListener('click', function () {
   const playerChoice = getPlayerChoice();
   const computerChoice = getComputerChoice();
   const winner = getWinner(computerChoice, playerChoice);
-  console.log(winner);
+  let message = `You picked ${playerChoice}, computer picked ${computerChoice}. `;
+  if (winner === RESULT_DRAW) {
+    message = message + `Hence, ${RESULT_DRAW}`;
+  } else if (winner === RESULT_PLAYER_WINS) {
+    message = message + `Hence, ${RESULT_PLAYER_WINS}`;
+  } else {
+    message = message + `Hence, ${RESULT_COMPUTER_WINS}`;
+  }
+  alert(message);
+  gameIsRunning = false;
 });

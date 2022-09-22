@@ -205,6 +205,7 @@ function doSomething("click", doCalculations);
 - [Click here for more details on advanced functions explained](/03_advanced-functions-project/function_lessons.js)
 - Function Declaration/Statements: Hoisted to the top, it can be declared anywhere in the file. Can call the function declaration/statement anywhere in the file
 - Function Expression: Hoisted to top but not initialised or defined. Can't be declared anywhere in the file. Has to be declared before it is called.
+ - [Click here for more arrow functions syntax](/documentation/07_arrow-functions-syntax.md)
 
 **Anonymous Functions**
 
