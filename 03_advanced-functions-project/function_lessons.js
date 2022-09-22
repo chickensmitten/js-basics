@@ -92,12 +92,12 @@ const sumUp = (a, b, ...numbers) => {
 };
 
 // Callback function
-const sumCallBacks = (cb, ...numbers) => {
+const sumCallBacks = (showResultHandler, ...numbers) => {
   let sum = 0;
   for (const num of numbers) {
     sum += num;
   }
-  cb(sum);
+  showResultHandler(sum);
 };
 const showResult = (result) => {
   alert('Show result of all added numbers' + result);
