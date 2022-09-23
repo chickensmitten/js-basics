@@ -32,9 +32,7 @@ console.dir(h1); // use this to know which properties are available
 
 **Attributes vs Properties**
 - Attributes are mapped to properties 
-<div>
-  <img src="/04_dom-project/images/attributes-vs-properties.png" width="400">
-</div>
+![attributes-vs-properties](/04_dom-project/images/attributes-vs-properties.png)
 - get and set properties in attributes 
 ```
 const input = document.querySelector("input")
