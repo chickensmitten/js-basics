@@ -18,7 +18,7 @@ console.dir(document); // to see everything in the DOM and know which properties
 - You can also instantiate constant of document
 - Accessing the elements in documents with `querySelector` and other options available
 ![queryselector](/04_dom-project/images/query-selector.png)
-- [Click here for other node query methods](/04_dom-project/documents/node-query-methods.md)
+- IMPORTANT!: [Click here for other node query methods](/04_dom-project/documents/node-query-methods.md)
 - Changing DOM properties
 ```
 const h1 = document.querySelector("h1");
