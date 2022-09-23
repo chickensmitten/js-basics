@@ -208,5 +208,7 @@ function doSomething("click", doCalculations);
 - For more information about advanced functions like Anonymous Functions, Callback Functions & Functions in Functions, Default Arguments & Rest Operator, bind() & more, [Click here](/03_advanced-functions-project/function_lessons.js)
 - Rest Operators or three dots using `...<variable>`. refer to [Rest Operator Line in this file for more info](/03_advanced-functions-project/function_lessons.js)
 
-
+## Functions
+- About DOM. Learnt `document`, `window`
+- [Click here for more info on DOM](/04_dom-project/dom.md)
 
