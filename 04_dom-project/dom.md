@@ -7,28 +7,48 @@
 
 **Document**
 - Accessing document
-![Click here for the image](/04_dom-project/images/console-dir.png)
-<img src="/04_dom-project/images/console-dir.png" width="200" height="200">
-
 ```
 document; // sames as window.document;
 
-console.dir(document); // to see everything in the DOM
+console.dir(document); // to see everything in the DOM and know which properties are available
 ```
-- Nodes vs Elements 
-![Nodes vs Elements](/04_dom-project/images/nodes-vs-elements.png)
+![Click here for the image](/04_dom-project/images/console-dir.png)
+- [Click her efor more infor on Nodes vs Elements](/04_dom-project/images/nodes-vs-elements.png)
 - [Reference for Node.nodeTypes](https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType)
-- 
-
-- Accessing the elements in documents;
+- You can also instantiate constant of document
+- Accessing the elements in documents with `querySelector` and other options available
+![queryselector](/04_dom-project/images/query-selector.png)
+- [Click here for other node query methods](/04_dom-project/documents/node-query-methods.md)
+- Changing DOM properties
 ```
-document.documentElement;
-
-//returns all HTML content
-<html lang=​"en">​<head>​…​</head>​<body>​ ​</body>​</html>​
+const h1 = document.querySelector("h1");
+h1.textContent
+h1.textcontent = "Some New Text!";
+h1.className = "Title";
+h1.style.color = "white";
+h1.style.backgroundColor = "red"; //backgroundColor is changed from background-color as the dash will not work
+console.dir(h1); // use this to know which properties are available
 ```
 
-
+**Attributes vs Properties**
+- Attributes are mapped to properties 
+<div>
+  <img src="/04_dom-project/images/attributes-vs-properties.png" width="400">
+</div>
+- get and set properties in attributes 
+```
+const input = document.querySelector("input")
+console.dir(input)
+const input2 = document.querySelector("input")
+console.dir(input2)
+input2.value = "some other input"
+```
+- change attribute
+```
+input.setAttribute("value", "some other default value")
+input.value
+input.value = input.getAttribute("value") // reset the input
+```
 
 
 
