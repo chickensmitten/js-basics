@@ -206,6 +206,7 @@ function doSomething("click", doCalculations);
 - Function Expression: Hoisted to top but not initialised or defined. Can't be declared anywhere in the file. Has to be declared before it is called.
 - [Click here for more arrow functions syntax](/documentation/07_arrow-functions-syntax.md)
 - For more information about advanced functions like Anonymous Functions, Callback Functions & Functions in Functions, Default Arguments & Rest Operator, bind() & more, [Click here](/03_advanced-functions-project/function_lessons.js)
+- For more explanation on .bind(), [Click here](/public/bind-explanation.png)
 - Rest Operators or three dots using `...<variable>`. refer to [Rest Operator Line in this file for more info](/03_advanced-functions-project/function_lessons.js)
 
 ## Document Object Model (DOM)

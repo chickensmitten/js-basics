@@ -106,6 +106,8 @@ console.log(sumCallBacks(showResult, 1, 3, 4, 83));
 
 // about bind()
 // when .bind() is called as a method on your object, it will create a new function reference which is not immediately executed. It is prepared for future execution
+// another way is just to write an anonymous function to replace the .bind parameter
+// https://www.w3schools.com/js/js_function_bind.asp
 const combineForBind = (showResultHandler, operation, ...numbers) => {
   let sum = 0;
   for (const num of numbers) {
