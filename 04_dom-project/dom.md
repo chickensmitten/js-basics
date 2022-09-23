@@ -7,7 +7,8 @@
 
 **Document**
 - Accessing document
-![Click here for the image](/04_dom-project/images/console-dir.png =x250)
+![Click here for the image](/04_dom-project/images/console-dir.png)
+<img src="/04_dom-project/images/console-dir.png" width="200" height="200">
 
 ```
 document; // sames as window.document;
