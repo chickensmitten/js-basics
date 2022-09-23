@@ -6,13 +6,16 @@
 - 
 
 **Document**
-- Accessing document. ![Click here for the image](/04_dom-project/images/console-dir.png)
+- Accessing document
+![Click here for the image](/04_dom-project/images/console-dir.png =x250)
+
 ```
 document; // sames as window.document;
 
 console.dir(document); // to see everything in the DOM
 ```
-- ![Nodes vs Elements](/04_dom-project/images/nodes-vs-elements.png)
+- Nodes vs Elements 
+![Nodes vs Elements](/04_dom-project/images/nodes-vs-elements.png)
 - [Reference for Node.nodeTypes](https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType)
 - 
 
