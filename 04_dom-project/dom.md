@@ -34,15 +34,15 @@ console.dir(h1); // use this to know which properties are available
 - Attributes are mapped to properties 
 ![attributes-vs-properties](/04_dom-project/images/attributes-vs-properties.png)
 - get and set properties in attributes 
+- changing attribute value doesn't reflect in HTML code.
 ```
 const input = document.querySelector("input")
 console.dir(input)
 const input2 = document.querySelector("input")
 console.dir(input2)
 input2.value = "some other input"
-```
-- change attribute
-```
+
+
 input.setAttribute("value", "some other default value")
 input.value
 input.value = input.getAttribute("value") // reset the input
