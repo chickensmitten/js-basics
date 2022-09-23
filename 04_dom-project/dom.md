@@ -13,7 +13,8 @@ document; // sames as window.document;
 console.dir(document); // to see everything in the DOM and know which properties are available
 ```
 ![Click here for the image](/04_dom-project/images/console-dir.png)
-- [Click her efor more infor on Nodes vs Elements](/04_dom-project/images/nodes-vs-elements.png)
+- Nodes includes blank spaces, white text, css elements etc.
+- [Click here for more info on Nodes vs Elements](/04_dom-project/images/nodes-vs-elements.png)
 - [Reference for Node.nodeTypes](https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType)
 - You can also instantiate constant of document
 - Accessing the elements in documents with `querySelector` and other options available
@@ -79,4 +80,70 @@ const header = ul.previousSibling // returns the node which is a empty space tex
 const footer = ul.nextElementSibling // returns <footer>...</footer>
 const footer = ul.nextSibling // returns the node which is a empty space text, not the footer
 ```
+
+## Styling DOM Elements
+![styling-dom-elemnts](/04_dom-project/images/styling-dom-elements.png)
+- Examples of styling
+```
+const section = document.querySelector("section");
+section.className = "red-bg";
+
+const button = document.querySelector("button");
+button.addEventListener("click", () => {
+  section.classList.con;
+  section.classList.add;
+  section.classList.remove;
+  section.classList.replace;
+  section.classList.toggle("invisible"); // makes the invisible style true or false
+  // allows you to change styles without if else statements
+});
+```
+
+## Create and Insert Elements
+![creating-inserting-elements](/04_dom-project/images/creating-inserting-elements.png)
+- Methods to create and add elements
+```
+section.innerHTML = "<h2>Some H2 text</h2>"; // innerHTML swaps the entire nested HTML code in section
+
+const list = document.querySelector("ul");
+list.innerHTML = list.innerHTML + "<li>Item 4</li>" // it still changes everything inside the ul. if there are input elements with values. it will be lost
+
+// or
+
+list.insertAdjacentHTML("beforeend", "<li>something went wrong</li>") // beforebegin, afterbegin, beforeend, afterend are methods to add content inside.
+
+//or
+
+const newLi = document.createElement("li");
+list.appendChild(newLi); // or prepend to put it before
+newLi.textcontent = "Item 4";
+newLi.style.backgroundColor = "blue";
+```
+
+![insertion-removal](/04_dom-project/images/insertion-removal.png)
+- Methods to insert elements
+```
+const list = document.querySelector("ul");
+const newLi = document.createElement("li");
+newLi.textContent = "Item 4";
+list.append(newLi);
+list.lastElementChild.before(newLi); // newLi moved from last element in the list to second last. As it is objects are references.
+list.firstElementChild.replaceWith(newLi); // replace first child with newLi
+// before and after doesn work in safari. Search MDN for more info
+
+secondLi.insertAdjacentElement("afterend", newLi)
+```
+- Methods to copy elements
+```
+const newLi2 = newLi.cloneNode(true) // clones direct child and all nested elements and descendants
+```
+- Methods to remove
+```
+const list = document.querySelector("ul");
+list.remove();
+// or 
+list.parentElement.removeChild(list); // works for all browser
+```
+- [Click here for more info on insert, replace, remove](/04_dom-project/documents/insert-replace-remove.md)
+
 

@@ -209,6 +209,6 @@ function doSomething("click", doCalculations);
 - Rest Operators or three dots using `...<variable>`. refer to [Rest Operator Line in this file for more info](/03_advanced-functions-project/function_lessons.js)
 
 ## Document Object Model (DOM)
-- About DOM. Learn accesing the DOM, traversing the DOM,
+- About DOM. Learn accesing the DOM, traversing the DOM, styling DOM elements, create/insert Elements.
 - [Click here for more info on DOM](/04_dom-project/dom.md)
 
