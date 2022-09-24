@@ -213,3 +213,6 @@ function doSomething("click", doCalculations);
 - About DOM. Learn accesing the DOM, traversing the DOM, styling DOM elements, create/insert Elements.
 - [Click here for more info on DOM](/04_dom-project/dom.md)
 
+## More on Arrays
+- Iterables includes Arrays, NodeList, Strings, Map, Set.
+- Array-like Objects are objects that have length property and use indexes to access items. like NodeList, String
