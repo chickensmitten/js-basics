@@ -216,3 +216,13 @@ function doSomething("click", doCalculations);
 ## More on Arrays
 - Iterables includes Arrays, NodeList, Strings, Map, Set.
 - Array-like Objects are objects that have length property and use indexes to access items. like NodeList, String
+- Main caveat of arrays is whether the new array is a reference or a copied version.
+- Sets, orders are not guaranteed, duplicates not allowed, no index access
+- Maps, any key values are allowed, order is guaranteed, duplicate keys not allowed, key based access.
+- 98% we will use Arrays and Objects
+- [About Arrays, Sets, Maps example codes](/06_creating-arrays/setsmaps.js)
+- [Difference between Arrays, Sets and Maps](/public/maps-sets-objects.png)
+- [Use this to access more arrays, sets and maps functions with VSCode](/public/accessing-more-weak-set-functions.png)
+- Maps are quite similar to objects, but maps are better performant for large data, can use any values as keys like booleans and functions, better write performance too. [Click here for more info](/public/maps-vs-objects.png)
+- [Click here for more on arrays examples](/06_creating-arrays/app.js)
+
