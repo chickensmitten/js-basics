@@ -226,3 +226,9 @@ function doSomething("click", doCalculations);
 - Maps are quite similar to objects, but maps are better performant for large data, can use any values as keys like booleans and functions, better write performance too. [Click here for more info](/public/maps-vs-objects.png)
 - [Click here for more on arrays examples](/06_creating-arrays/app.js)
 
+## More on Objects
+![Objects](/public/what-are-objects.png)
+- What are objects? Mostly anything that are not primitive value. [Click here for more information](/documentation/08_what-are-objects.md)
+- [Click here for more info on this in Objects](/documentation/09_this-summary.md)
+
+
