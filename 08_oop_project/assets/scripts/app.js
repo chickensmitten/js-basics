@@ -63,7 +63,11 @@ class ShoppingCart extends Component {
   }
 
   constructor(renderHookId) {
-    super(renderHookId); // calling the constructor in the parent class which is Components
+    super(renderHookId, false); // calling the constructor in the parent class which is Components // added false so that super doesn't call render
+    this.orderProducts = () => {
+      
+    };
+    this.render();
   }
 
   addProduct(product) {
@@ -72,15 +76,17 @@ class ShoppingCart extends Component {
     this.cartItems = updatedItems;
   }
 
+  
   render() {
     const cartEl = this.createRootElement('section', 'cart');
     cartEl.innerHTML = `
       <h2>Total: \$${0}</h2>
       <button>Order Now!</button>
     `;
-    cartEl.className = 'cart';
+    const orderButton = cartEl.querySelector("button");
+    // orderButton.addEventListener("click", () => this.orderProducts());
+    orderButton.addEventListener("click", this.orderProducts);
     this.totalOutput = cartEl.querySelector('h2');
-    return cartEl;
   }
 }
 
@@ -114,15 +120,16 @@ class ProductItem extends Component {
 }
 
 class ProductList extends Component {
-  products = [];
+  #products = [];
 
   constructor(renderHookId) {
-    super(renderHookId);
+    super(renderHookId, false);
+    this.render();
     this.fetchProducts();
   }
 
   fetchProducts() {
-    this.products = [
+    this.#products = [
       new Product(
         'pillow',
         'https://upload.wikimedia.org/wikipedia/commons/7/71/HK_SW_Hollywood_Road_Police_HQ_Art_Demo_12-2009_bed_and_pillows_in_white.JPG',
@@ -140,7 +147,7 @@ class ProductList extends Component {
   }
 
   renderProducts() {
-    for (const prod of this.products) {
+    for (const prod of this.#products) {
       new ProductItem(prod, 'prod-list');
     }
   }
@@ -149,15 +156,15 @@ class ProductList extends Component {
     this.createRootElement('ul', 'product-list', [
       new ElementAttribute('id', 'prod-list'),
     ]);
-    if ( this.products && this.products.length > 0) {
+    if ( this.products && this.#products.length > 0) {
       this.renderProducts();
     }
   }
 }
 
-class Shop extends Component {
+class Shop {
   constructor() {
-    super();
+    this.render();
   }
 
   render() {

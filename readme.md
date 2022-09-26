@@ -287,3 +287,29 @@ App.addProductToCart(product);
 - with inheritance, you can call `super()` in the constructor function to init the constructor in the parent class.
 - [Click here for code implementation](/08_oop_project/assets/scripts/app.js)
 - `super()` parent constructor has to be executed before. `this` field name = field value must be added after.
+- if `this` is not referring to the correct function, can use anon arrow function or use `.bind(this)`
+```
+// arrow function
+orderButton.addEventListener("click", () => this.orderProducts());
+
+// .bind()
+orderButton.addEventListener("click", this.orderProducts.bind(this));
+
+// initializing arrow functions 
+orderButton.addEventListener("click", this.orderProducts);
+
+orderProducts = () => {
+console.log("something")
+}
+```
+
+**Private Fields, Properties & Methods**
+[private-fields-properties-methods](/public/private-fields-properties.png)
+- using `#` to denote private
+- because private properties are new, [read this for pseudo-private properties](/documentation/10_pseudo-private-properties.md)
+
+
+
+
+
+
