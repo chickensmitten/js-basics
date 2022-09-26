@@ -231,4 +231,5 @@ function doSomething("click", doCalculations);
 - What are objects? Mostly anything that are not primitive value. [Click here for more information](/documentation/08_what-are-objects.md)
 - [Click here for more info on this in Objects](/documentation/09_this-summary.md)
 
+## Object-oriented Programming (OOP)
 
