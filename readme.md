@@ -259,7 +259,7 @@ const product1 = New Product(... put values here...);
 
 **About Static**
 - class static method ![static](/public/static-methods-properties.png)
-- static allows you to use class methods
+- static allows you to use class methods by calling the class then the property `Class.some_property` instead of calling from an instance 
 ```
 class App {
   static cart;
@@ -277,7 +277,13 @@ class App {
 
 App.init();
 App.addProductToCart(product);
+
+// instead of calling from instance
+app = App(...something... here);
+app.addProductToCart(product);
+
 ```
+- In Ruby, it is akin to class methods vs instance methods
 - Use classes when you are reusing certain objects over and over again
 
 
@@ -339,6 +345,7 @@ Object.defineProperty(p, "name", {
 
 ## More on constructors
 - classes in javacript are syntactic sugar for constructor functions.
+- construction functions are functions which can be called together with the `new` keyword to create an object based on it.
 - [Click here for more examples](/09_constructor/app.js)
 
 **Prototypes & Prototypical Inheritance**
@@ -349,6 +356,11 @@ Object.defineProperty(p, "name", {
 - constructor functions and prototypes power Javascript objects
 - every contructor functions you build has prototype property
 - prototype is an object itself.
+- Idea behind "Prototypical Inheritance" is to provide fall back for objects
 - prototype objects == "Fallback objects". if certain property is called from the object and not found, it will call the object before it. Working sort of like inheritance.
-- `__proto__` is present for every object
-- `prototype` only exists on function object
+- Every object uses `console.dir(Object.prototype);` as its default fallback value
+- What's the difference between someObj.__proto__ vs SomeFunction.prototype?
+`__proto__` points at the prototype object of `someObj`, `prototype` at the prototype object that will be assigned as prototype to objects created based on `SomeFunction`
+- [Click here for Prototype Summary](/documentation/11_prototype-summary.md)
+![Different kinds of method declarations](/public/different-kinds-of-method-declarations.png)
+- Different kind of method declarations
