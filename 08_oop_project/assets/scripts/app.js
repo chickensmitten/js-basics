@@ -15,19 +15,33 @@ class Product {
 class ShoppingCart {
   items = [];
 
+  set cartItems(value) {
+    this.items = value;
+    this.totalOutput.innerHTML = `<h2>Total: \$${this.totalAmount.toFixed(2)}</h2>`;
+  }
+
+  get totalAmount() {
+    const sum = this.items.reduce(
+      (prevValue, curItem) => prevValue + curItem.price,
+      0
+    );
+    return sum;
+  }
+
   addProduct(product) {
-    this.items.push(product);
-    this.totalOutput = `<h2>Total: \$${1}</h2>`
+    const updatedItems = [...this.items];
+    updatedItems.push(product);
+    this.cartItems = updatedItems;
   }
 
   render() {
-    const cartEl = document.createElement("section");
+    const cartEl = document.createElement('section');
     cartEl.innerHTML = `
       <h2>Total: \$${0}</h2>
       <button>Order Now!</button>
     `;
-    cartEl.className = "cart";
-    this.totalOutput = cartEl.querySelector("h2");
+    cartEl.className = 'cart';
+    this.totalOutput = cartEl.querySelector('h2');
     return cartEl;
   }
 }
@@ -38,7 +52,7 @@ class ProductItem {
   }
 
   addToCart() {
-
+    App.addProductToCart(this.product);
   }
 
   render() {
@@ -55,8 +69,8 @@ class ProductItem {
         </div>
       </div>
     `;
-    const addCartButton = prodEl.querySelector("button"); // products with multiple buttons is not a problem because this query selector is only created inside this contained class
-    addCartButton.addEventListener("click", this.addToCart.bind(this)); //using bind for this
+    const addCartButton = prodEl.querySelector('button'); // products with multiple buttons is not a problem because this query selector is only created inside this contained class
+    addCartButton.addEventListener('click', this.addToCart.bind(this)); //using bind for this
     return prodEl;
   }
 }
@@ -66,14 +80,14 @@ class ProductList {
     new Product(
       'pillow',
       'https://upload.wikimedia.org/wikipedia/commons/7/71/HK_SW_Hollywood_Road_Police_HQ_Art_Demo_12-2009_bed_and_pillows_in_white.JPG',
-      19.99,
-      'A soft fluffy'
+      'A soft fluffy',
+      19.99      
     ),
     new Product(
       'carpet',
       'https://upload.wikimedia.org/wikipedia/commons/c/c4/Carpet_Khachagorg.jpg',
-      89.99,
-      'Thic carpet'
+      'Thic carpet',
+      89.99
     ),
   ];
 
@@ -95,18 +109,29 @@ class Shop {
   render() {
     const renderHook = document.getElementById('app');
 
-    const cart = new ShoppingCart();
-    const cartEl = cart.render();
+    this.cart = new ShoppingCart();
+    const cartEl = this.cart.render();
 
     const productList = new ProductList();
     const prodListEl = productList.render();
 
-    renderHook.append(cartEl);    
-    renderHook.append(prodListEl);    
+    renderHook.append(cartEl);
+    renderHook.append(prodListEl);
   }
 }
 
-const shop = new Shop();
-shop.render();
+class App {
+  static cart; // makes it clear that this cart is available here
 
+  static init() {
+    const shop = new Shop();
+    shop.render();
+    this.cart = shop.cart;
+  }
 
+  static addProductToCart(product) {
+    this.cart.addProduct(product);
+  }
+}
+
+App.init();

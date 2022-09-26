@@ -249,8 +249,31 @@ class Product {
     this.description = desc;
     this.price = price;
   }  
+
+  render () {} // can be used. Mostly for html logic
 }
 
 const product1 = New Product(... put values here...);
 ```
 - classes can add logic like html, not only data containers
+- class static method ![static](/public/static-methods-properties.png)
+- static allows you to use class methods
+```
+class App {
+  static cart;
+  
+  static init() {
+    const shop = new Shop();
+    shop.render();
+    this.cart = shop.cart;
+  }
+
+  static addProductToCart(product) {
+    this.cart.addProduct(product);
+  }
+}
+
+App.init();
+App.addProductToCart(product);
+```
+- Use classes when you are reusing certain objects over and over again
