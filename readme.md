@@ -337,5 +337,10 @@ Object.defineProperty(p, "name", {
 });
 ```
 
+## More on constructors
+- 
+
+**Constructor Functions**
 
 
+**Prototypes & Prototypical Inheritance**
