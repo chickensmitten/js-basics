@@ -232,4 +232,25 @@ function doSomething("click", doCalculations);
 - [Click here for more info on this in Objects](/documentation/09_this-summary.md)
 
 ## Object-oriented Programming (OOP)
+- OOP is programming by defining object entities in your code. To create objects, you must first define it as classes of objects.
+- Explanation of classes (framework for defining objects) vs instances (objects are instances of classes)
+![classes-and-instances](/public/classes-and-instances.png)
+- Defining classes in JS code, `class` is a reserved word
+```
+class Product {
+  title = "DEFAULT"; //default value
+  iageUrl; // undefined default value
+  description;
+  price;
+
+  constructor(title, image, desc, price) {
+    this.title = title; // refers to this class
+    this.imageUrl = image;
+    this.description = desc;
+    this.price = price;
+  }  
+}
+
+const product1 = New Product(... put values here...);
+```
 
