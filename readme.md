@@ -253,4 +253,4 @@ class Product {
 
 const product1 = New Product(... put values here...);
 ```
-
+- classes can add logic like html, not only data containers

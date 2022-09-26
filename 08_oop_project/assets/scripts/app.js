@@ -12,9 +12,33 @@ class Product {
   }
 }
 
+class ShoppingCart {
+  items = [];
+
+  addProduct(product) {
+    this.items.push(product);
+    this.totalOutput = `<h2>Total: \$${1}</h2>`
+  }
+
+  render() {
+    const cartEl = document.createElement("section");
+    cartEl.innerHTML = `
+      <h2>Total: \$${0}</h2>
+      <button>Order Now!</button>
+    `;
+    cartEl.className = "cart";
+    this.totalOutput = cartEl.querySelector("h2");
+    return cartEl;
+  }
+}
+
 class ProductItem {
   constructor(product) {
     this.product = product;
+  }
+
+  addToCart() {
+
   }
 
   render() {
@@ -31,6 +55,8 @@ class ProductItem {
         </div>
       </div>
     `;
+    const addCartButton = prodEl.querySelector("button"); // products with multiple buttons is not a problem because this query selector is only created inside this contained class
+    addCartButton.addEventListener("click", this.addToCart.bind(this)); //using bind for this
     return prodEl;
   }
 }
@@ -54,7 +80,6 @@ class ProductList {
   constructor() {}
 
   render() {
-    const renderHook = document.getElementById('app');
     const prodList = document.createElement('ul');
     prodList.className = 'product-list';
     for (const prod of this.products) {
@@ -62,10 +87,26 @@ class ProductList {
       const prodEl = productItem.render();
       prodList.append(prodEl);
     }
-    renderHook.append(prodList);    
+    return prodList;
   }
 }
 
-const productList = new ProductList();
-productList.render();
+class Shop {
+  render() {
+    const renderHook = document.getElementById('app');
+
+    const cart = new ShoppingCart();
+    const cartEl = cart.render();
+
+    const productList = new ProductList();
+    const prodListEl = productList.render();
+
+    renderHook.append(cartEl);    
+    renderHook.append(prodListEl);    
+  }
+}
+
+const shop = new Shop();
+shop.render();
+
 
