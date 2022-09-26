@@ -338,9 +338,17 @@ Object.defineProperty(p, "name", {
 ```
 
 ## More on constructors
-- 
-
-**Constructor Functions**
-
+- classes in javacript are syntactic sugar for constructor functions.
+- [Click here for more examples](/09_constructor/app.js)
 
 **Prototypes & Prototypical Inheritance**
+![prototypes](/public/prototypes.png)
+![prototypes-objects](/public/prototype-objects.png)
+![prototypes-in-console](/public/prototype-in-console.png)
+![prototypes-chain](/public/prototype-chain.png)
+- constructor functions and prototypes power Javascript objects
+- every contructor functions you build has prototype property
+- prototype is an object itself.
+- prototype objects == "Fallback objects". if certain property is called from the object and not found, it will call the object before it. Working sort of like inheritance.
+- `__proto__` is present for every object
+- `prototype` only exists on function object
