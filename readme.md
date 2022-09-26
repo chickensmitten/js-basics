@@ -256,6 +256,8 @@ class Product {
 const product1 = New Product(... put values here...);
 ```
 - classes can add logic like html, not only data containers
+
+**About Static**
 - class static method ![static](/public/static-methods-properties.png)
 - static allows you to use class methods
 ```
@@ -277,3 +279,10 @@ App.init();
 App.addProductToCart(product);
 ```
 - Use classes when you are reusing certain objects over and over again
+
+
+**Inheritance**
+- a class can extends from another class
+`class Porche extends Cars {}`
+- with inheritance, you can call `super()` in the constructor function to init the constructor in the parent class.
+- [Click here for code implementation](/08_oop_project/assets/scripts/app.js)
