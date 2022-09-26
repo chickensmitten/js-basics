@@ -20,9 +20,14 @@ class ElementAttribute {
 }
 
 class Component {
-  constructor(renderHookId) {
+  constructor(renderHookId, shouldRender = true) {
     this.hookId = renderHookId;
+    if (shouldRender) {
+      this.render();
+    }
   }
+
+  render() {} // this is added to make it clear that render is called in the component class, though it isn't necessary
 
   createRootElement(tag, cssClasses, attributes) {
     const rootElement = document.createElement(tag);
@@ -81,8 +86,9 @@ class ShoppingCart extends Component {
 
 class ProductItem extends Component {
   constructor(product, renderHookId) {
-    super(renderHookId);
+    super(renderHookId, false);
     this.product = product;
+    this.render();
   }
 
   addToCart() {
@@ -108,42 +114,55 @@ class ProductItem extends Component {
 }
 
 class ProductList extends Component {
-  products = [
-    new Product(
-      'pillow',
-      'https://upload.wikimedia.org/wikipedia/commons/7/71/HK_SW_Hollywood_Road_Police_HQ_Art_Demo_12-2009_bed_and_pillows_in_white.JPG',
-      'A soft fluffy',
-      19.99
-    ),
-    new Product(
-      'carpet',
-      'https://upload.wikimedia.org/wikipedia/commons/c/c4/Carpet_Khachagorg.jpg',
-      'Thic carpet',
-      89.99
-    ),
-  ];
+  products = [];
 
   constructor(renderHookId) {
     super(renderHookId);
+    this.fetchProducts();
+  }
+
+  fetchProducts() {
+    this.products = [
+      new Product(
+        'pillow',
+        'https://upload.wikimedia.org/wikipedia/commons/7/71/HK_SW_Hollywood_Road_Police_HQ_Art_Demo_12-2009_bed_and_pillows_in_white.JPG',
+        'A soft fluffy',
+        19.99
+      ),
+      new Product(
+        'carpet',
+        'https://upload.wikimedia.org/wikipedia/commons/c/c4/Carpet_Khachagorg.jpg',
+        'Thic carpet',
+        89.99
+      ),
+    ];    
+    this.renderProducts();
+  }
+
+  renderProducts() {
+    for (const prod of this.products) {
+      new ProductItem(prod, 'prod-list');
+    }
   }
 
   render() {
     this.createRootElement('ul', 'product-list', [
       new ElementAttribute('id', 'prod-list'),
     ]);
-    for (const prod of this.products) {
-      const productItem = new ProductItem(prod, 'prod-list');
-      productItem.render();
+    if ( this.products && this.products.length > 0) {
+      this.renderProducts();
     }
   }
 }
 
-class Shop {
+class Shop extends Component {
+  constructor() {
+    super();
+  }
+
   render() {
     this.cart = new ShoppingCart("app");
-    this.cart.render();
-    const productList = new ProductList("app");
-    productList.render();
+    new ProductList("app");
   }
 }
 
@@ -152,7 +171,6 @@ class App {
 
   static init() {
     const shop = new Shop();
-    shop.render();
     this.cart = shop.cart;
   }
 

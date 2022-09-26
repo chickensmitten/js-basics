@@ -286,3 +286,4 @@ App.addProductToCart(product);
 `class Porche extends Cars {}`
 - with inheritance, you can call `super()` in the constructor function to init the constructor in the parent class.
 - [Click here for code implementation](/08_oop_project/assets/scripts/app.js)
+
