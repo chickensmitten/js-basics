@@ -306,10 +306,36 @@ console.log("something")
 **Private Fields, Properties & Methods**
 [private-fields-properties-methods](/public/private-fields-properties.png)
 - using `#` to denote private
-- because private properties are new, [read this for pseudo-private properties](/documentation/10_pseudo-private-properties.md)
+- before private properties, `_` is used in front of constant object to denote it is private
+- because private properties are new, [read this for how pseudo-private properties used to be done in Js](/documentation/10_pseudo-private-properties.md)
 
+**instanceof Operator**
+- instanceof operator returns true of false if object belongs to class
+```
+class Person {
+    name = "Max";
+}
+const p = new Person();
+typeof p // returns object
+p instanceof Person // returns true
 
+btn instanceof HTMLButtonElemnt // true
+btn instanceof Person // false
+```
+- `const obj = new Object();` is same as calling `const obj = {};`
 
+**Object Descriptors**
+- object descriptors allows you to lock down certain capabilities in an object like configurable, enumerable, writable etc.
+- `Object.getOwnPropertyDescriptors(p)` // returns metadata of Person
+- The code below locks down `writable` for object `p`
+```
+Object.defineProperty(p, "name", {
+    configurable: true,
+    enumerable: true,
+    value: p.name,
+    writable: false
+});
+```
 
 
 
