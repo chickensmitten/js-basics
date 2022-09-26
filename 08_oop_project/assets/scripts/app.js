@@ -1,8 +1,8 @@
 class Product {
-  title = 'DEFAULT'; //default value
-  iageUrl; // undefined default value
-  description;
-  price;
+  // title = 'DEFAULT'; //default value
+  // iageUrl; // undefined default value
+  // description;
+  // price;
 
   constructor(title, image, desc, price) {
     this.title = title; // refers to this class
