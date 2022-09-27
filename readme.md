@@ -229,6 +229,8 @@ const tooltipText = projectElement.dataset.extraInfo;
 >
 ```
 - calling `getboundingClientRect()` from `document.getElementById("main-box").getBoundingClientRect()` gives you useful information of an element to manage its width, height, position etc.
+- get the screen width and height `document.documentElement.clientWidth` and `document.documentElement.clientHeight`
+- Other element manipulation methods include: `.offsetTop`, `.offsetLeft`, `.clientTop`, `.clientLeft`, `.offsetWidth`, `.offsetHeight`,`.clientWidth`, `.clientHeight`, `.scrollHeight`, `.scrollTop`. [For more info checkout HTML element article](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement)
 
 
 ## More on Arrays
