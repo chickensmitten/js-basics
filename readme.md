@@ -1,5 +1,11 @@
 # JS Basic
 
+## Main Learning Takeaway
+- selecting the right value, properties etc in side the function or the function itself is important. Most errors are because you selected the wrong one. To solve it, you need to traverse with DOM with console.log
+- Everything in JS is array or objects. This means, most times, it is about adding and removing stuff from arrays or objects.
+- Use JS frameworks to save code, however within the same page, can use DOM methods.
+
+
 ## let variables vs const constants
 - using `let` as variables can change.
 - using `const` as variables, it can't be changed.
@@ -212,7 +218,17 @@ function doSomething("click", doCalculations);
 ## Document Object Model (DOM)
 - About DOM. Learn accesing the DOM, traversing the DOM, styling DOM elements, create/insert Elements.
 - [Click here for more info on DOM](/04_dom-project/dom.md)
-
+- `projectElement.dataset.extraInfo;` accesses `data-extra-info`
+```
+const projectElement = document.getElementById(this.id);
+const tooltipText = projectElement.dataset.extraInfo;
+<li
+  id="p1"
+  data-extra-info="Got lifetime access, but would be nice to finish it soon!"
+  class="card"
+>
+```
+- calling `getboundingClientRect()` from `document.getElementById("main-box").getBoundingClientRect()` gives you useful information of an element to manage its width, height, position etc.
 
 
 ## More on Arrays
