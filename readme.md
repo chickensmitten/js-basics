@@ -215,7 +215,7 @@ function doSomething("click", doCalculations);
 - For more explanation on .bind(), [Click here](/public/bind-explanation.png)
 - Rest Operators or three dots using `...<variable>`. refer to [Rest Operator Line in this file for more info](/03_advanced-functions-project/function_lessons.js)
 
-## Document Object Model (DOM)
+## Document Object Model (DOM) and Browser APIs
 - About DOM. Learn accesing the DOM, traversing the DOM, styling DOM elements, create/insert Elements.
 - [Click here for more info on DOM](/04_dom-project/dom.md)
 - `projectElement.dataset.extraInfo;` accesses `data-extra-info`
@@ -232,6 +232,27 @@ const tooltipText = projectElement.dataset.extraInfo;
 - get the screen width and height `document.documentElement.clientWidth` and `document.documentElement.clientHeight`
 - Other element manipulation methods include: `.offsetTop`, `.offsetLeft`, `.clientTop`, `.clientLeft`, `.offsetWidth`, `.offsetHeight`,`.clientWidth`, `.clientHeight`, `.scrollHeight`, `.scrollTop`. [For more info checkout HTML element article](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement)
 - [Click here for more info](/10-practice-oop/assets/scripts/app.js)
+- use `location` method to do thing related to the webpage URL
+-`location.href = "https://google.com"` goes directly to a new website
+-`location.replace("https://google.com")` goes directly to a new website without back button
+- `history` allows you interact with `location` history
+- `history.back` goes back a page where you came from
+- `history.go(5)` goes back 5 steps
+- `navigator` allows you to check the browser type, `.geolocation.getCurrentPosition` e.g. `navigator.userAgent` though this is not really useful because web developers can lie. Better to check if the `navigator` contains certain functions 
+- getting dates
+```
+const date = new Date();
+date.getDay();
+date.getTime();
+const date2 = new Date("07/11/19"); // Jully 11th 2019 etc
+```
+- custom errors
+```
+const customError = new Error("Something wrong!")
+customError.code // returns 404. There are many more errors
+console.dir(customError) // to see everything under the hood
+```
+- [Search Mozilla for more on Browser APIs](https://developer.mozilla.org/en-US/docs/Web/API)
 
 ## More on Arrays
 - Iterables includes Arrays, NodeList, Strings, Map, Set.
