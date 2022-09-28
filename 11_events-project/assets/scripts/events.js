@@ -84,14 +84,21 @@ div.addEventListener("click", event => {
 
 button.addEventListener("click", event => {
   event.stopPropagation(); // stops bubbling
-  event.stopImmediatePropagation; // stops bubbling if there are multiple event listeners
+  // event.stopImmediatePropagation; // stops bubbling if there are multiple event listeners
   console.log("CLICKED BUTTON");
   console.log(event);
+  console.log(this);
 });
 
 // event delegation
 const listItems = document.querySelectorAll("li");
 const list = document.querySelector("ul");
+
+// listItems.forEach(listItem => {
+//   listItem.addEventListener("click", event => {
+//     event.target.classList.toggle("highlight");
+//   }) // this is cumbersome to add multiple listeners and takes up too much memory
+// });
 
 list.addEventListener("click", event => {
   // event.target.classList.toggle("highlight"); // this doesn't change all items to red
@@ -99,11 +106,5 @@ list.addEventListener("click", event => {
   form.submit(); // programatically triggers a form submit event, however note that his bypasses instructions like event.preventDefault(); that occurs when users click on it.
   // unless of course you call on click on the submit button form, then event.preventDefault(); will occur
 }); // listening for event propagation here is more efficient, as there is only one event listener
-
-// listItems.forEach(listItem => {
-//   listItem.addEventListener("click", event => {
-//     event.target.classList.toggle("highlight");
-//   }) // this is cumbersome to add multiple listeners and takes up too much memory
-// });
 
 
