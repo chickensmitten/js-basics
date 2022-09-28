@@ -72,3 +72,19 @@ form.addEventListener("submit", event => {
   event.preventDefault(); // prevent default behaviour of the browser. In this case, it prevents the page from reloading when clicking submit form
   console.log(event);
 })
+
+// example of event propagation
+const button = document.querySelector("button");
+const div = document.querySelector("div");
+
+div.addEventListener("click", event => {
+  console.log("CLICKED DIV");
+  console.log(event);
+}, true); // adding true here means that the event should be in the capturing phase not bubbling phase
+
+button.addEventListener("click", event => {
+  event.stopPropagation(); // stops bubbling
+  event.stopImmediatePropagation; // stops bubbling if there are multiple event listeners
+  console.log("CLICKED BUTTON");
+  console.log(event);
+});
