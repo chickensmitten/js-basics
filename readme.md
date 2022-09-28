@@ -384,7 +384,7 @@ Object.defineProperty(p, "name", {
 });
 ```
 
-## More on constructors
+**Constructors**
 - classes in javacript are syntactic sugar for constructor functions.
 - construction functions are functions which can be called together with the `new` keyword to create an object based on it.
 - [Click here for more examples](/09_constructor/app.js)
@@ -405,3 +405,8 @@ Object.defineProperty(p, "name", {
 - [Click here for Prototype Summary](/documentation/11_prototype-summary.md)
 ![Different kinds of method declarations](/public/different-kinds-of-method-declarations.png)
 - Different kind of method declarations
+
+## Events
+- exampls of event listenders `addEventListener()` (in Browser) or `on()` (in node JS)
+- search for MDN Event to get more event examples
+- using `onclick` in html is strongly discouraged because it mixes html with inline javascript. It makes it harded to reason and troubleshoot. Should be added to js file instead
