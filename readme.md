@@ -412,5 +412,5 @@ Object.defineProperty(p, "name", {
 - using `onclick` in html is strongly discouraged because it mixes html with inline javascript. It makes it harded to reason and troubleshoot. Should be added to js file instead
 - DOM events propagates, it is called event propagation. 
 - DOM events has two phases: capturing and bubbling phases. in Capturing phase, DOM events captures actions into the HTML e.g. from `<section>` to `<div>` to `<button>` to `click` then it executes from inside to outside by bubbling back up from `click` to `<button>` to `<div>` to `<section>`.
-
+- use DOM traversing to implement event delegation
 - [Click here to see events js code examples](/11_events-project/assets/scripts/events.js) and [here for events html code example](/11_events-project/events.html)

@@ -89,12 +89,15 @@ button.addEventListener("click", event => {
   console.log(event);
 });
 
+// event delegation
 const listItems = document.querySelectorAll("li");
 const list = document.querySelector("ul");
 
 list.addEventListener("click", event => {
   // event.target.classList.toggle("highlight"); // this doesn't change all items to red
   event.target.closest("li").toggle("highlight"); // when any parts inside the li is clicked. The closest li, will toggle on/off red
+  form.submit(); // programatically triggers a form submit event, however note that his bypasses instructions like event.preventDefault(); that occurs when users click on it.
+  // unless of course you call on click on the submit button form, then event.preventDefault(); will occur
 }); // listening for event propagation here is more efficient, as there is only one event listener
 
 // listItems.forEach(listItem => {
@@ -102,4 +105,5 @@ list.addEventListener("click", event => {
 //     event.target.classList.toggle("highlight");
 //   }) // this is cumbersome to add multiple listeners and takes up too much memory
 // });
+
 
