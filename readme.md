@@ -413,5 +413,16 @@ Object.defineProperty(p, "name", {
 - DOM events propagates, it is called event propagation. 
 - DOM events has two phases: capturing and bubbling phases. in Capturing phase, DOM events captures actions into the HTML e.g. from `<section>` to `<div>` to `<button>` to `click` then it executes from inside to outside by bubbling back up from `click` to `<button>` to `<div>` to `<section>`.
 - use DOM traversing to implement event delegation
-- `this` in `event => {}` points at windows. `this` in `function(event) {}` points at the current element target
+- gotchas with `this` and event handlers. `this` in `event => {}` points at windows. `this` in `function(event) {}` points at the current element target
 - [Click here to see events js code examples](/11_events-project/assets/scripts/events.js) and [here for events html code example](/11_events-project/events.html)
+
+**Drag and Drops**
+- theory for drag and drop events: 
+1. Mark elements as `draggable` 
+2. Listen to `dragstart` Event (describe operation & append data). [Click here for setData drag types](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Recommended_drag_types) and [click here for effectAllowed drag and drop operations](https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/effectAllowed)
+3. Accept Drop via `dragenter` and `dragover` `events => preventDefault()` 
+4. Optional: Listen to `dragleave` Event (e.g. update styles) 
+5. Listen to `drop` Event & Update Data/UI 
+6. Optional: Listen to `dragend` Event & Update Data/UI
+- [Click here to see app js example code implementation](/11_events-project/assets/scripts/app.js) and [here for index html](/11_events-project/index.html)
+

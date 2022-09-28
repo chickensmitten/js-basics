@@ -84,6 +84,7 @@ class ProjectItem {
     this.updateProjectListsHandler = updateProjectListsFunction;
     this.connectMoreInfoButton();
     this.connectSwitchButton(type);
+    this.connectDrag();
   }
 
   showMoreInfoHandler() {
@@ -101,6 +102,18 @@ class ProjectItem {
     );
     tooltip.attach();
     this.hasActiveTooltip = true;
+  }
+
+  connectDrag() {
+    const item = document.getElementById(this.id);
+    item.addEventListener('dragstart', (event) => {
+      event.dataTransfer.setData('text/plain', this.id); // see MDN web doc on different setData types
+      event.dataTransfer.effectAllowed = 'move';
+    });
+
+    item.addEventListener("dragend", event => {
+      console.log(event); // check out dropeffect here to see if the drop succeed. if "none" it failed. if "move" it succeeds.
+    });
   }
 
   connectMoreInfoButton() {
@@ -140,6 +153,44 @@ class ProjectList {
       );
     }
     console.log(this.projects);
+    this.connectDroppable();
+  }
+
+  connectDroppable() {
+    const list = document.querySelector(`#${this.type}-projects ul`); // drop into ul
+
+    list.addEventListener('dragenter', (event) => {
+      if (event.dataTransfer.types[0] === 'text/plain') {
+        list.parentElement.classList.add('droppable'); // enable droppable
+        event.preventDefault(); // if we don't do this, no drop event will be triggered
+      }
+    });
+
+    list.addEventListener('dragover', (event) => {
+      if (event.dataTransfer.types[0] === 'text/plain') {
+        event.preventDefault(); // if we don't do this, no drop event will be triggered
+      }
+    });
+
+    list.addEventListener('dragleave', (event) => {
+      if (event.relatedTarget.closest(`#${this.type}-projects ul`) !== list) {
+        list.parentElement.classList.remove('droppable'); // remove the droppable color in the old list
+      }
+    });
+
+    list.addEventListener('drop', (event) => {
+      const prjId = event.dataTransfer.getData('text/plain');
+      if (this.projects.find((p) => p.id === prjId)) {
+        return; // if this already exists, do nothing if the dragged item is dropped
+      }
+      // add to this list and remove from the previous list
+      document
+        .getElementById(prjId)
+        .querySelector('button:last-of-type')
+        .click(); // use existing method to add to new list and remove from old list
+      list.parentElement.classList.remove('droppable'); // remove the droppable color in the new list
+      event.preventDefault(); // required only if you want to prevent some other default events from happening.
+    });
   }
 
   setSwitchHandlerFunction(switchHandlerFunction) {
@@ -155,8 +206,8 @@ class ProjectList {
   switchProject(projectId) {
     // const projectIndex = this.projects.findIndex(p => p.id === projectId);
     // this.projects.splice(projectIndex, 1);
-    this.switchHandler(this.projects.find(p => p.id === projectId));
-    this.projects = this.projects.filter(p => p.id !== projectId);
+    this.switchHandler(this.projects.find((p) => p.id === projectId));
+    this.projects = this.projects.filter((p) => p.id !== projectId);
   }
 }
 
@@ -171,11 +222,11 @@ class App {
       activeProjectsList.addProject.bind(activeProjectsList)
     );
 
-    const timerId = setTimeout(this.startAnalytics, 3000);
+    // const timerId = setTimeout(this.startAnalytics, 3000);
 
-    document.getElementById('stop-analytics-btn').addEventListener('click', () => {
-      clearTimeout(timerId);
-    });
+    // document.getElementById('stop-analytics-btn').addEventListener('click', () => {
+    //   clearTimeout(timerId);
+    // });
   }
 
   static startAnalytics() {
