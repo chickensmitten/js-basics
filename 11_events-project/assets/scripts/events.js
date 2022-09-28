@@ -88,3 +88,18 @@ button.addEventListener("click", event => {
   console.log("CLICKED BUTTON");
   console.log(event);
 });
+
+const listItems = document.querySelectorAll("li");
+const list = document.querySelector("ul");
+
+list.addEventListener("click", event => {
+  // event.target.classList.toggle("highlight"); // this doesn't change all items to red
+  event.target.closest("li").toggle("highlight"); // when any parts inside the li is clicked. The closest li, will toggle on/off red
+}); // listening for event propagation here is more efficient, as there is only one event listener
+
+// listItems.forEach(listItem => {
+//   listItem.addEventListener("click", event => {
+//     event.target.classList.toggle("highlight");
+//   }) // this is cumbersome to add multiple listeners and takes up too much memory
+// });
+
