@@ -25,33 +25,53 @@ const setTimer = (duration) => {
   return promise;
 };
 
-function trackUserHandler() {
-  let positionData;
+// // then catch is similar to async await below. except for timer done and getting position. these will run while waiting for then and catch.
+// function trackUserHandler() {
+//   let positionData;
+//   getPosition()
+//     .then((posData) => {
+//       positionData = posData;
+//       return setTimer(2000);
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//     })
+//     .then((data) => {
+//       console.log(data, positionData);
+//     });
+//   // setTimer(1000).then(() => {
+//   //   console.log('Timer done!');
+//   // });
+//   // console.log('Getting position...');
+// };
 
-  getPosition()
-    .then((posData) => {
-      positionData = posData;
-      return setTimer(2000);
-    })
-    .catch((err) => {
-      console.log(err);
-      return 'on we go...';
-    })
-    .then((data) => {
-      console.log(data, positionData);
-    });
-  setTimer(1000).then(() => {
-    console.log('Timer done!');
-  });
-  console.log('Getting position...');
+// Async Await is similar to then catch above. except for timer done and getting position. these will run after the await functions are run.
+async function trackUserHandler() {
+  let posData;
+  let timerData;
+  try {
+    posData = await getPosition();
+    timerData = await setTimer(2000);
+  } catch (error) {
+    console.log(error);
+  }
+  // console.log(timerData, posData);
+  // setTimer(1000).then(() => {
+  //   console.log('Timer done!');
+  // });
+  // console.log('Getting position...');
 }
 
 button.addEventListener('click', trackUserHandler);
 
-// let result = 0;
+Promise.race([getPosition(), setTimer(1000)]).then((data) => {
+  console.log(data);
+});
 
-// for (let i = 0; i < 100000000; i++) {
-//   result += i;
-// }
+Promise.all([getPosition(), setTimer(1000)]).then((promiseData) => {
+  console.log(promiseData);
+});
 
-// console.log(result);
+Promise.allSettled([getPosition(), setTimer(1000)]).then((promiseData) => {
+  console.log(promiseData);
+});

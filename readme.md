@@ -488,6 +488,11 @@ someAsyncTask()
   .then(...);
 ```
 - when using `.catch` with `.then`, anytime within the `.then` code there's an error. all `.then` code will be skipped until it reaches `.catch`. any `then` thereafter `.catch` will execute as normal.
+- `async` must pair with `wait`. 
+- Max prefers `.then` and `.catch`. read code example for more information.
+- `Promise.race([])` takes an array of promises and runs whichever is faster.
+- `Promise.all([])` return all data from array of promises only after all is resolved or at returns error if at least one is rejected.
+- `Promise.allSettled([])` return all data from array of promises only after all is resolved.
 - [Click here for promises summary and finally in promises](/documentation/13_promises-states-finally.md)
 
 ## Grab Bag
