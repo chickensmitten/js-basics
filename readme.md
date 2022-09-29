@@ -65,6 +65,18 @@
 - typeof is used to check the type of a variable at runtime.
 - `userName = "Max"`, then use `typeof userName` will return `string`
 
+**More on Numbers and Strings**
+- every numbers in Javacript is floating points.
+- numbers are stored as 64 bit floating points.
+- `Number.MAX_SAFE_INTEGER` returns biggest possible integer. There are many more methods for `Number` it is same as `Math.pow(2, 53) -1`.
+- Javascript can display numbers bigger than max safe integer, but it wouldn't be able to calculate it try `Math.pow(2, 53) +1`. It will be incorrect/imprecise
+- Calculating with floating points are imprecise. Therefore Javascript calculations are imprecise.
+- `BigInt` is a primitive value that can be used to calculate imprecision.
+- `Math` and `Number` methods are available. Can search through MDN docs. [Here for math](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math), [here for numbers](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)
+- For string methods, [click here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+- Can also use regex to filter strings for true or false
+- [Click here for more information](/13_more-numbers-strings-project/app.js)
+
 ## Importing scripts properly
 - `defer` and `async` is only works for external scripts. Internal scripts inside the documents doesn't benefit from them.
 - `defer` load early, execute later. Scripts with defer never block the page. Scripts with defer always execute when the DOM is ready (but before DOMContentLoaded event).
