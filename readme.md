@@ -215,6 +215,16 @@ function doSomething("click", doCalculations);
 - For more explanation on .bind(), [Click here](/public/bind-explanation.png)
 - Rest Operators or three dots using `...<variable>`. refer to [Rest Operator Line in this file for more info](/03_advanced-functions-project/function_lessons.js)
 
+**Pure Functions**
+- What are pure functions, see image below and [read here for more info](/12_more-advanced-functions-project/app.js)
+![pure-functions](/public/pure-functions.png)
+- It is always to good idea to aim for pure functions without side effects. That is the goal.
+
+**Factory Functions**
+- It is a function that produces another function. [Click here for more info](/12_more-advanced-functions-project/app.js)
+- 
+
+
 ## Document Object Model (DOM) and Browser APIs
 - About DOM. Learn accesing the DOM, traversing the DOM, styling DOM elements, create/insert Elements.
 - [Click here for more info on DOM](/04_dom-project/dom.md)
