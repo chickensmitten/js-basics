@@ -221,9 +221,20 @@ function doSomething("click", doCalculations);
 - It is always to good idea to aim for pure functions without side effects. That is the goal.
 
 **Factory Functions**
-- It is a function that produces another function. [Click here for more info](/12_more-advanced-functions-project/app.js)
-- 
+- It is a function that produces another function. 
+- [Click here for more info](/12_more-advanced-functions-project/app.js)
 
+**Closures**
+- Every function in javascript is a closure
+- Closure deals with different lexical environments. Each function has its own lexical environment that the function lives in the a global lexical environment.
+- [Click here for more info](/12_more-advanced-functions-project/app.js)
+
+**Recursion**
+- it is a function calling itself
+- recursion requires an exit condition
+- [Click here for more info](/12_more-advanced-functions-project/app.js)
+- advanced recursion is very useful for deeply nest, many level of nesting objects
+- recursion can be hard to reason through, use breakpoints to do it
 
 ## Document Object Model (DOM) and Browser APIs
 - About DOM. Learn accesing the DOM, traversing the DOM, styling DOM elements, create/insert Elements.
