@@ -466,3 +466,30 @@ Object.defineProperty(p, "name", {
 - Async code executions allows for code execution asynchronously
 ![async-code-with-callback](/public/async-code-with-callback.png)
 - [Click here for more async code examples](/14_async-project/app.js)
+- Callback hell happens when you need to get your code running in order, you nest your code. It is better to uses promises and chain the code execution. Example implementation below:
+```
+// Callback Hell
+getCurrentPosition(() => {
+  setTimeout(() => {
+    doMoreAsyncStuff(() => {
+      ...
+    });
+  }, 1000);
+}, ...);
+
+//promises
+someAsyncTask()
+  .then(() => {
+    return another Task();
+  })
+  .then(() => {
+    return yetAnotherTask();
+  })
+  .then(...);
+```
+- when using `.catch` with `.then`, anytime within the `.then` code there's an error. all `.then` code will be skipped until it reaches `.catch`. any `then` thereafter `.catch` will execute as normal.
+- [Click here for promises summary and finally in promises](/documentation/13_promises-states-finally.md)
+
+## Grab Bag
+- To learn about MongoDB [click here](https://www.notion.so/MongoDB-Node-Driver-Node-js-Cheat-Sheet-30af79111465430980b7e7828c8e8f65). It contains how to create, read, filter, update, delete, CRUD, index, aggregate, geolocation, geospatial etc
+- MongoDB above also shows how to do pagination
