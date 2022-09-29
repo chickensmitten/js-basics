@@ -459,3 +459,10 @@ Object.defineProperty(p, "name", {
 6. Optional: Listen to `dragend` Event & Update Data/UI
 - [Click here to see app js example code implementation](/11_events-project/assets/scripts/app.js) and [here for index html](/11_events-project/index.html)
 - [Click here for drag and drop adjustments for firefox](/documentation/12_drag-and-drop-for-firefox.md)
+
+## Asynchronous Code
+- All codes executes in sequence
+![code-in-sequence](/public/code-in-sequence.png)
+- Async code executions allows for code execution asynchronously
+![async-code-with-callback](/public/async-code-with-callback.png)
+- [Click here for more async code examples](/14_async-project/app.js)
