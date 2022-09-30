@@ -495,6 +495,11 @@ someAsyncTask()
 - `Promise.allSettled([])` return all data from array of promises only after all is resolved.
 - [Click here for promises summary and finally in promises](/documentation/13_promises-states-finally.md)
 
+## HTTP
+- For free fake http, use [JSONPlaceholder](https://jsonplaceholder.typicode.com)
+- `JSON.stringify` helps convert javascript to JSON, while `JSON.parse` converts JSON to javascript
+- [Click here on JSON data deep dive](/documentation/14_json-data-deep-dive.md) 
+
 ## Grab Bag
 - To learn about MongoDB [click here](https://www.notion.so/MongoDB-Node-Driver-Node-js-Cheat-Sheet-30af79111465430980b7e7828c8e8f65). It contains how to create, read, filter, update, delete, CRUD, index, aggregate, geolocation, geospatial etc
 - MongoDB above also shows how to do pagination
