@@ -498,7 +498,9 @@ someAsyncTask()
 ## HTTP
 - For free fake http, use [JSONPlaceholder](https://jsonplaceholder.typicode.com)
 - `JSON.stringify` helps convert javascript to JSON, while `JSON.parse` converts JSON to javascript
+- `new XMLHttpRequest` is old method. New method is `fetch`
 - [Click here on JSON data deep dive](/documentation/14_json-data-deep-dive.md) 
+- [Click here for great example implementation of http with UI](/15_http-requests/assets/scripts/app.js)
 
 ## Grab Bag
 - To learn about MongoDB [click here](https://www.notion.so/MongoDB-Node-Driver-Node-js-Cheat-Sheet-30af79111465430980b7e7828c8e8f65). It contains how to create, read, filter, update, delete, CRUD, index, aggregate, geolocation, geospatial etc
