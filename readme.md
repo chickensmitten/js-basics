@@ -519,7 +519,7 @@ import("./Tooltip.js").then(module => {
 ```
 - can use `window.DEFAULT_VALUE = "Max";` or `globalThis.DEFAULT_VALUE = "Max";` which is outside a function in file A, to share something globally. Then it can be called on in file B that in a function `console.log(window.DEFAULT_VALUE);` or `console.log(globalThis.DEFAULT_VALUE);`. Only use this as last resort. it is like a hack
 
-## Javascript Tooling
+## Javascript Workflow and Tooling
 - Limitations of basic projects. micromanaging lots of imports and unnecessary http requests, unoptimized code, potentially sub-optimal browser support, need to reload page manually, code quality is not checked.
 - List of web development tools normally used in Javascript:
 1. `webpack-dev-server` or `serve` provide development server for more realistic development environment and provides auto-reload
@@ -588,7 +588,7 @@ module.exports = {
 ```
 - browsers will typically cache the files, so when deploying these files to the production server without changing the file names, the browsers will serve the old files. To solve this issue, we will need to change the file name everytime a new change is deployed to production. To do that we make this dyanmic element change `filename: [contenthash].js` in the webpack.config.prod.js file.
 - adding third party packages with npm command, this will create a `dependencies` in package.json. for example you installed `npm install --save lodash`, to use it in your file use `import * as _ from "lodash";` `* as _` is all functions in lodash. you can call specific features with `{ ... some function ...}` or `"lodash/"array`; in the import line.
-
+- For code example of the above, [click here](/18_javascript-tooling-and-workflow-project/)
 
 ## Grab Bag
 - To learn about MongoDB [click here](https://www.notion.so/MongoDB-Node-Driver-Node-js-Cheat-Sheet-30af79111465430980b7e7828c8e8f65). It contains how to create, read, filter, update, delete, CRUD, index, aggregate, geolocation, geospatial etc
