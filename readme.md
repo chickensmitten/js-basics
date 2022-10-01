@@ -503,7 +503,7 @@ someAsyncTask()
 - [Click here for great example implementation of http with UI](/15_http-requests/assets/scripts/app.js)
 
 ## Modular Javascript
-- to run your project in localhost, and not through html, installd NodeJS, then install serve with `npm install -g serve`
+- to run your project in localhost web server, and not through html, installd NodeJS, then install serve with `npm install -g serve`
 - serve tool allows you to use `export` and `import`
 - using `export` to a function indicates that it is ready for external file to import. then use `import` in the external file to import the function.
 - it resolves CORS policy issue. it basically means cross domains downloads are not allowed, you are only allowed to download scripts from the same domain your page is running from.
