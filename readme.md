@@ -503,7 +503,7 @@ someAsyncTask()
 - [Click here for great example implementation of http with UI](/15_http-requests/assets/scripts/app.js)
 
 ## Modular Javascript
-- to run your project in localhost web server, and not through html, installd NodeJS, then install serve with `npm install -g serve`
+- to run your project in localhost web server, and not through html, installd NodeJS, then install serve with `npm install -g serve`. `-g` means globally.
 - serve tool allows you to use `export` and `import`
 - using `export` to a function indicates that it is ready for external file to import. then use `import` in the external file to import the function.
 - it resolves CORS policy issue. it basically means cross domains downloads are not allowed, you are only allowed to download scripts from the same domain your page is running from.
@@ -518,6 +518,77 @@ import("./Tooltip.js").then(module => {
 });
 ```
 - can use `window.DEFAULT_VALUE = "Max";` or `globalThis.DEFAULT_VALUE = "Max";` which is outside a function in file A, to share something globally. Then it can be called on in file B that in a function `console.log(window.DEFAULT_VALUE);` or `console.log(globalThis.DEFAULT_VALUE);`. Only use this as last resort. it is like a hack
+
+## Javascript Tooling
+- Limitations of basic projects. micromanaging lots of imports and unnecessary http requests, unoptimized code, potentially sub-optimal browser support, need to reload page manually, code quality is not checked.
+- List of web development tools normally used in Javascript:
+1. `webpack-dev-server` or `serve` provide development server for more realistic development environment and provides auto-reload
+2. `webpack` bundling tool allows for combining multiple files into bundled code so that there are less files.
+3. `webpack optimizer` plugins. optimizes code (shorten function names, remove whitespaces etc)
+4. `babel` is a code compilation tool that allows you to write modern code yet get "older" code as output
+5. `eslint` is used to check for code quality, check for conventions and patterns.
+- An overview of Javascript workflow
+![javascript-workflow](/public/javascript-workflow.png)
+- with NodeJS installed, go to a directory then type `npm init`. It will create a `package.json`
+- `npm install --save-dev eslint` installing eslint in the development side of `package.json`. ReactJS normally already has it.
+- Using eslint. `Cmd + Shift + P` type `eslint` then choose `eslint` configuration, then go through the prompt to selection the options
+- For more information on configuring eslint, [click here](/documentation/15_configuring-eslint.md)
+- To install webpack, `npm install --save-dev webpack webpack-cli`
+- create a new file called `webpack.config.js` to give instructions to `webpack`. Please note NodeJS uses
+```
+// /webpack.config.js
+const path = require("path");
+module.exports = {
+  entry: "./src/app.js",
+  output: { // it denotes which folder should the js output be in.
+    filename: "app.js",
+    path: path.resolve(__dirname, "assets", "scripts")
+    // __dirname is node js global constant that gives us access to this current absolute path
+  }
+};
+```
+- becauase `webpack` tries to bundle our files, the config is to let it know where to begin and how to bundle.
+- can remove `.js` in `import {} from "./somefile.js"` with `webpack`
+- To read more about webpack, [click here](/documentation/16_multiple-entry-webpack.md)
+- config webpack bundling for development node, because without it, it will assume the code is in production mode. but also need let webpack know the publicPath in development.
+```
+// /webpack.config.js
+const path = require("path");
+module.exports = {
+  node: "development",
+  entry: "./src/app.js",
+  output: {
+    filename: "app.js",
+    path: path.resolve(__dirname, "assets", "scripts"),
+    publicPath: "assets/scripts/"
+  }
+};
+```
+- using `npm install --save-dev webpack-dev-server`to auto reload in development server. Then add `"build:dev": "webpack-dev-server"` to scripts in package.json file 
+- for good in browser debugging experience with sourcemaps, like adding thumbnails to stop the code, add `devtool: "cheap-module-eval-source-map"` to webpack.config.js. There are many `devtool` options in webpack documentation.
+- `webpack.config.prod.js` is used for production. the `node:` should change to production. and in package.json add `"build:prod": "webpack --config webpack.config.prod.js"`, then when run `npm run build:prod`
+- optimization by getting rid of old files. firstly install `npm install --save-dev clean-webpack-plugin`, then add the following config file to dev and prod webpack config js file below:
+```
+// /webpack.config.js & /webpack.config.prod.js
+const path = require("path");
+const CleanPlugin = require("clean-webpack-plugin");
+module.exports = {
+  node: "development",
+  entry: "./src/app.js",
+  output: {
+    filename: "app.js",
+    path: path.resolve(__dirname, "assets", "scripts"),
+    publicPath: "assets/scripts/"
+  },
+  devtool: "cheap-module-eval-source-map",
+  plugins: [
+    new CleanPLugin.CleanWebpackPlugin()
+  ]
+};
+```
+- browsers will typically cache the files, so when deploying these files to the production server without changing the file names, the browsers will serve the old files. To solve this issue, we will need to change the file name everytime a new change is deployed to production. To do that we make this dyanmic element change `filename: [contenthash].js` in the webpack.config.prod.js file.
+- adding third party packages with npm command, this will create a `dependencies` in package.json. for example you installed `npm install --save lodash`, to use it in your file use `import * as _ from "lodash";` `* as _` is all functions in lodash. you can call specific features with `{ ... some function ...}` or `"lodash/"array`; in the import line.
+
 
 ## Grab Bag
 - To learn about MongoDB [click here](https://www.notion.so/MongoDB-Node-Driver-Node-js-Cheat-Sheet-30af79111465430980b7e7828c8e8f65). It contains how to create, read, filter, update, delete, CRUD, index, aggregate, geolocation, geospatial etc
