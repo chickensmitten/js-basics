@@ -502,6 +502,23 @@ someAsyncTask()
 - [Click here on JSON data deep dive](/documentation/14_json-data-deep-dive.md) 
 - [Click here for great example implementation of http with UI](/15_http-requests/assets/scripts/app.js)
 
+## Modular Javascript
+- to run your project in localhost, and not through html, installd NodeJS, then install serve with `npm install -g serve`
+- serve tool allows you to use `export` and `import`
+- using `export` to a function indicates that it is ready for external file to import. then use `import` in the external file to import the function.
+- it resolves CORS policy issue. it basically means cross domains downloads are not allowed, you are only allowed to download scripts from the same domain your page is running from.
+- alternative naming syntax for modules. `import { ProjectItem as PrjItem } from "./ProjectItem.js"`. `PrjItem` can be used to as alias for `ProjectItem`
+- `export default class {}` means that this function in the file is default exported function. just need to `import <Any Name> from "./Component.js`. Then you can add `import <Any Name>, { ...list of other not default named exported functions... } from "./Component.js`
+- importing specific functions only when you need the code. this improves performance because you don't have to download all the scripts beforehand. Might not be good to do this. Better to create more sub-modules/components
+```
+import("./Tooltip.js").then(module => {
+  const tooltip = new module.Tooltip(
+    ... do something ...
+  )
+});
+```
+- can use `window.DEFAULT_VALUE = "Max";` or `globalThis.DEFAULT_VALUE = "Max";` which is outside a function in file A, to share something globally. Then it can be called on in file B that in a function `console.log(window.DEFAULT_VALUE);` or `console.log(globalThis.DEFAULT_VALUE);`. Only use this as last resort. it is like a hack
+
 ## Grab Bag
 - To learn about MongoDB [click here](https://www.notion.so/MongoDB-Node-Driver-Node-js-Cheat-Sheet-30af79111465430980b7e7828c8e8f65). It contains how to create, read, filter, update, delete, CRUD, index, aggregate, geolocation, geospatial etc
 - MongoDB above also shows how to do pagination
