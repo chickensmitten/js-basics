@@ -620,6 +620,22 @@ module.exports = {
 - for more info on IndexedDB [click here](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
 - [idb third party library](https://github.com/jakearchibald/idb)) to make working with indexedDB much easier 
 
+## Browser support
+- Browser Features vs Javascript Syntax
+![browser-support](/public/browser-support.png)
+- Guide to Features & Browser Support
+![feature-browser-support](/public/feature-browser-support.png)
+- browser support issues shouldn't affect NodeJs, because it is a non-browser environment and you can control your JS version.
+- can go `caniuse.com` to check for features and browser support.
+- there should be fallback code if a feature is not available. know if the feature is available, write feature detection by using truthy or falsy i.e. `navigation.clipboard` doesn't work in safari browser. `if(navigation.clipboard) { ... do intended function ... } else { ... run some fallback code ... };`
+- other than using fallback, you can use Polyfills to make code work in more browsers. It is a third party package. 
+![polyfill](/public/polyfills.png)
+- To find polyfills, google for `<method> polyfill`. or you can automatically add it by npm installing `core-js` then tell babel to use it in presets.
+- some features can't use fallback detection or polyfills, then have to use transpilation. 
+- Transpilation converts modern code to "older" code. Babel and browserlist are transpilation package that used together for transpilation. It should come with all major js framework.
+![transpilation](/public/transpilation.png)
+- For code examples on browser support with babel, browserlist, corejs, [click here](/20_browser-support-project/webpack.config.js)
+
 ## Grab Bag
 - To learn about MongoDB [click here](https://www.notion.so/MongoDB-Node-Driver-Node-js-Cheat-Sheet-30af79111465430980b7e7828c8e8f65). It contains how to create, read, filter, update, delete, CRUD, index, aggregate, geolocation, geospatial etc
 - MongoDB above also shows how to do pagination
