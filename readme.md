@@ -637,6 +637,12 @@ module.exports = {
 ![transpilation](/public/transpilation.png)
 - For code examples on browser support with babel, browserlist, corejs, [click here](/20_browser-support-project/webpack.config.js)
 
+## JS Framework
+- Examples of JS frameworks are Angular, React, Vue, expressJS, NodeJS etc. Google them to understand more.
+- Introducing ReactJS. ReactJS uses declarative approach, while in this practice we have been usnig imperative approach for learning purposes.
+![intro-reactjs](/public/introducing-reactjs.png)
+
+
 ## Grab Bag
 - For a JS basic practice project on how to share location with google map, [click here](/21_practice-js-basic-project/)
 1. first run `npm run build:dev`
