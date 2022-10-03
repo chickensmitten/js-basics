@@ -590,6 +590,36 @@ module.exports = {
 - adding third party packages with npm command, this will create a `dependencies` in package.json. for example you installed `npm install --save lodash`, to use it in your file use `import * as _ from "lodash";` `* as _` is all functions in lodash. you can call specific features with `{ ... some function ...}` or `"lodash/"array`; in the import line.
 - For code example of the above, [click here](/18_javascript-tooling-and-workflow-project/)
 
+## Using Browser Storage
+- what is browser storage
+![browser-storage](/public/what-is-browser-storage.png)
+- localstorage vs cookies vs indexedDB
+![localstorage-vs-cookies-vs-indexeddb](/public/localstorage-vs-cookies-vs-indexeddb.png)
+- never take any browser-storage data as single source of truth because it can be manipulated by anyone.
+- access browser storage, inspect your browser, click on "Application" then you can see "Storage" on the side nav.
+
+**SessionStorage**
+- all objects have to convert to JSON strings, else it will be stored as `[object Object]`. this means methods cannot be stored as it will be lost once converted to JSON.
+- session storage is used to store cookies. `sessionStorage` method is used. 
+- session storage lives as long as the page is open in the browser. Once it is closed. It will be cleared. local storage is kept in the browser as long as the user doesn't remove it.
+
+**localStorage**
+- use `window.localStorage` or `localStorage` to access it in the browser. then there are methods like `.setItem()` and `.setItem()`
+- For code examples on localstorage, [click here](/19_browser-storage-project/localstorage.js)
+
+**Cookies**
+- example code on how to set cookies `document.cookie = "uid=u123"`. Cookies are only available if it is getting served with real available server. `npm serve` pkg can simulate real server in local development. some cookie with "HttpOnly" flags are only accessible by the server, not browser side.
+- cookies also can set a timer `document.cookie = "uid=u123"; max-age=360` or takes `expires=`, you can put objects as JSON strings, you can send to server with requests.
+- retrieving cookie data in index is not a good idea, better to search for the key name
+- For code examples on cookies, [click here](/19_browser-storage-project/cookies.js)
+- For more info on cookies [click here](https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie)
+
+**IndexedDB**
+- use `indexedDB.open();` to call it. then use methods/functions like `.createObjectStore();`
+- For code examples on indexedDB, [click here](/19_browser-storage-project/indexeddb.js)
+- for more info on IndexedDB [click here](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- [idb third party library](https://github.com/jakearchibald/idb)) to make working with indexedDB much easier 
+
 ## Grab Bag
 - To learn about MongoDB [click here](https://www.notion.so/MongoDB-Node-Driver-Node-js-Cheat-Sheet-30af79111465430980b7e7828c8e8f65). It contains how to create, read, filter, update, delete, CRUD, index, aggregate, geolocation, geospatial etc
 - MongoDB above also shows how to do pagination
