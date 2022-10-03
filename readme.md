@@ -626,6 +626,7 @@ module.exports = {
 - Guide to Features & Browser Support
 ![feature-browser-support](/public/feature-browser-support.png)
 - browser support issues shouldn't affect NodeJs, because it is a non-browser environment and you can control your JS version.
+- in case users turn off javascript in their browser, you can use `<noscript> Please enable Javascript</noscript>` to let users know they have to turn on their javascript.
 - can go `caniuse.com` to check for features and browser support.
 - there should be fallback code if a feature is not available. know if the feature is available, write feature detection by using truthy or falsy i.e. `navigation.clipboard` doesn't work in safari browser. `if(navigation.clipboard) { ... do intended function ... } else { ... run some fallback code ... };`
 - other than using fallback, you can use Polyfills to make code work in more browsers. It is a third party package. 
@@ -637,5 +638,10 @@ module.exports = {
 - For code examples on browser support with babel, browserlist, corejs, [click here](/20_browser-support-project/webpack.config.js)
 
 ## Grab Bag
+- For a JS basic practice project on how to share location with google map, [click here](/21_practice-js-basic-project/)
+1. first run `npm run build:dev`
+2. contains lessons on how to show and hide modal with oop classes 
+3. contains lessons on how to implement google maps SDK. please note `google` is a global variable obtained from `<script>` with src in `maps.googleapis.com`
+4. use [open layers](/documentation/17_open-layers-instead-of-google-maps.md) if don't want to use google maps
 - To learn about MongoDB [click here](https://www.notion.so/MongoDB-Node-Driver-Node-js-Cheat-Sheet-30af79111465430980b7e7828c8e8f65). It contains how to create, read, filter, update, delete, CRUD, index, aggregate, geolocation, geospatial etc
 - MongoDB above also shows how to do pagination
