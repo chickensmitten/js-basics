@@ -506,7 +506,7 @@ someAsyncTask()
 - to run your project in localhost web server, and not through html, installd NodeJS, then install serve with `npm install -g serve`. `-g` means globally.
 - serve tool allows you to use `export` and `import`
 - using `export` to a function indicates that it is ready for external file to import. then use `import` in the external file to import the function.
-- it resolves CORS policy issue. it basically means cross domains downloads are not allowed, you are only allowed to download scripts from the same domain your page is running from.
+- it resolves CORS policy issue. it basically means cross domains downloads are not allowed, you are only allowed to download scripts from the same domain your page is running from. For more info, [click here](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
 - alternative naming syntax for modules. `import { ProjectItem as PrjItem } from "./ProjectItem.js"`. `PrjItem` can be used to as alias for `ProjectItem`
 - `export default class {}` means that this function in the file is default exported function. just need to `import <Any Name> from "./Component.js`. Then you can add `import <Any Name>, { ...list of other not default named exported functions... } from "./Component.js`
 - importing specific functions only when you need the code. this improves performance because you don't have to download all the scripts beforehand. Might not be good to do this. Better to create more sub-modules/components
@@ -671,6 +671,18 @@ For more on this, [click here](https://developer.mozilla.org/en-US/docs/Web/Java
 - `get()` method is triggered when user is trying to read the value of a given propert in an object.
 - `set()` method is triggered when user is trying to change the value of a given property in an object. 
 - For more info on traps, [click here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy#a_complete_traps_list_example)
+
+## NodeJS
+- To run javascript file with NodeJs use `node app.js`
+- NodeJS is missing browser APIS like `document.querySelector`
+- `Buffer` is a global object in NodeJS.
+- For NodeJS code examples [click here](/23_node-js-practice-back-end/pure-node.js). The code example shows how to build a fullstack app with backend NodeJS.
+
+**expressJS**
+- Because writing with NodeJS is cumbersome and hard to scale. hence expressJS is needed as a framework for NodeJS.
+- `ejs` package allows injection of dynamic content into html with special syntax `<%= user %>`. For example, [click here](/23_node-js-practice-back-end/views/index.ejs)
+- For ExpressJS code examples [click here](/23_node-js-practice-back-end/app.js). The code example shows how to build a fullstack app with backend ExpressJS.
+- see [routes file in backend code](/23_node-js-practice-back-end/) and [frontend code](/24_node-js-practice-front-end/) to understand how front end works with back end through basic REST routes
 
 ## Grab Bag
 - For a JS basic practice project on how to share location with google map, [click here](/21_practice-js-basic-project/)
