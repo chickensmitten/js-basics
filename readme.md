@@ -643,6 +643,7 @@ module.exports = {
 ![intro-reactjs](/public/introducing-reactjs.png)
 
 ## Meta-Programming
+- Meta-programming writes code that are not directly affecting the end users of the code, but instead other developers that are depending on your code.
 - Meta-programming are symbols, iterators & generators, reflect API, proxy API
 ![meta-programming](/public/meta-programming.png)
 - For meta-programming examples, [click here](/22_meta-programming/app.js)
