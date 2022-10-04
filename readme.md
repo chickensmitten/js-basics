@@ -642,6 +642,34 @@ module.exports = {
 - Introducing ReactJS. ReactJS uses declarative approach, while in this practice we have been usnig imperative approach for learning purposes.
 ![intro-reactjs](/public/introducing-reactjs.png)
 
+## Meta-Programming
+- Meta-programming are symbols, iterators & generators, reflect API, proxy API
+![meta-programming](/public/meta-programming.png)
+- For meta-programming examples, [click here](/22_meta-programming/app.js)
+
+**symbols**
+- Why use symbols? e.g. You are a third party library developer, you have some objects that you want users to access to, however some properties in the objects like id you don't want the user to change it, so you can use symbols for that. It creates a unique id that users can't accidentally overwritten.
+- To get to know more about well-known Symbols, [click here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol)
+
+**iterators & generators**
+- With iterators, you can create your own custom looping logic like `next() {}` function in an object.
+- Generators are a special type of JS function which automatically generate iterators. use `function* someFunction() {}` to create generators.
+- When using `yield` saves the current state of execution, the next time when the execution is continued, it will continue where it left off.
+- Arrays are objects that has `Symbol.iterators` and `Symbol.unscopables`. i.e. `Symbol.iterators` are generators with `next()` function.
+![arrays-with-symbols](/public/arrays-with-symbols.png)
+
+**Reflect API**
+- Reflect API gives us a bunch of methods that help us change objects and work with objects on a meta levels.
+- Reflect API has two advantages over the Object API. 
+1. When a method fails to do its job, the Reflect API error is better. 
+2. It bundles API that is needed to work with objects. 
+For more on this, [click here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/Comparing_Reflect_and_Object_methods)
+
+**Proxy API**
+- It is used to create "traps" for object operations. Step in and execute code when certain object operation aka trap is triggered.
+- `get()` method is triggered when user is trying to read the value of a given propert in an object.
+- `set()` method is triggered when user is trying to change the value of a given property in an object. 
+- For more info on traps, [click here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy#a_complete_traps_list_example)
 
 ## Grab Bag
 - For a JS basic practice project on how to share location with google map, [click here](/21_practice-js-basic-project/)
