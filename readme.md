@@ -684,6 +684,16 @@ For more on this, [click here](https://developer.mozilla.org/en-US/docs/Web/Java
 - For ExpressJS code examples [click here](/23_node-js-practice-back-end/app.js). The code example shows how to build a fullstack app with backend ExpressJS.
 - see [routes file in backend code](/23_node-js-practice-back-end/) and [frontend code](/24_node-js-practice-front-end/) to understand how front end works with back end through basic REST routes
 
+## JS Security
+- What could go wrong with your JS code
+![what-could-go-wrong](/public/what-could-go-wrong.png)
+- use `.gitignore` to ignore sensitive env files
+- authentication should be backend server
+- generally don't allow users generated content to inject code into your code through XSS. i.e. you have `.innerHTML` that allows generating html with input text. Attackers can input `<img src="" onerror"alert('Hi there');">` to inject code into yout input. if you do need to use it, then have to sanitize the content with `sanitize-html` package.
+- example of CSRF
+![csrf](/public/csrf.png)
+
+
 ## Grab Bag
 - For a JS basic practice project on how to share location with google map, [click here](/21_practice-js-basic-project/)
 1. first run `npm run build:dev`
