@@ -693,6 +693,32 @@ For more on this, [click here](https://developer.mozilla.org/en-US/docs/Web/Java
 - example of CSRF
 ![csrf](/public/csrf.png)
 
+## JS Performance and Optimization
+- Performance are normally split into startup time (how long to see something in on the screen? hw quickly users are able to interact with the page?) and run time (how smooth does the application run? are there freezes or visual lags? Are there memory leaks? Is the page getting slower?). 
+- Run time optimization ideas
+![run-time-optimization-ideas](/public/run-time-performance-ideas.png)
+- Startup time optimization ideas
+![startup-time-optimization-ideas](/public/startup-time-performance-ideas.png)
+- Lots of CSS, HTML, Javascript codes and Speed of server all affect the performance and optimization.
+- Different layers of performance optimization are as follows. Startup Time: script size, http roundtrips. Runtime: DOM access, memory leaks, code alternatives (i.e. loops), micro-optimization.
+![performance-optimization-layers](/public/performance-optimization-layers.png)
+- How to measure and audit. Measure production code, roundtrips, bundle sizes, best coding practices and benchmarks, use devtools.
+- Use `performance.now()` during development and testing to check differences in execution time.
+- Use browser devtools to detect unnecessary code executions, http request, measure execution time and memory leaks. Most of the suggestions below are Chrome browser devtool. For additionaly information, [click here](https://developer.chrome.com/docs/devtools/).
+1. Inspect -> Elements. To check for which code executes when trigger, some codes might be unnecessarily triggered), 
+2. Inspect -> Network. Firstly "disable cache", then in "online" throttle the page with slower internet speeds, then check the file sizes and which files in the pages are broken when too slow). Press esc key, a "Coverage" option might appear to show which codes are not used. Unused code is opportunity for refactoring code into modular functions so that import syntax helps import files only when you need it aka lazy loading. Lazy loading is normally available in most JS frameworks.
+3. Inspect -> Performance -> Gear icon (if necessary). Go "CPU" and throttle it. Click on the round icon to record in the left, then a results will show. "Paint Flashing" option will allow you see which HTML rendering is loading when certain actions are triggered.
+![inspect-performance](/public/inspect-performance.png)
+- Use [jsperf.com](https://jsperf.com) to compare alternative code snippets.
+- Use [webpagetest.com](https://webpagetest.com) to test production code.
+4. Inspect -> Memory. Load page, take snapshot by clicking button at the bottom or the round icon, then take some action then take snapshot again. Then change "summary" to "comparison" in a dropdown bar. Memory inspection will compare the difference.
+![inspect-memory](/public/inspect-memory.png)
+5. Inspect -> Audits. Scroll down, click on "Run audits" to see performance.
+![inspect-audits](/public/inspect-audits.png)
+- to run production in the local development environment, use `npm run build:prod` or equivalent to build the production environment in your code. Then change the `webpack.config.js` file to production mode. This might include changing `devtool: "source-map"`. Using JS frameworks might change this.
+- For code example, [click here](/25_performance-and-optmization/src/optimized/). Compare the optimized folder with not optimized folder.
+- For JS server-side performance optimizations, [click here](/documentation/19_server-side-performance-optimization.md). In short, use compression of served assets, caching in client side and server side and HTTP/2. 
+
 
 ## Grab Bag
 - For a JS basic practice project on how to share location with google map, [click here](/21_practice-js-basic-project/)
