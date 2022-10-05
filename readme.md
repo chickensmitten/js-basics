@@ -764,3 +764,9 @@ For more on this, [click here](https://developer.mozilla.org/en-US/docs/Web/Java
 4. use [open layers](/documentation/17_open-layers-instead-of-google-maps.md) if don't want to use google maps
 - To learn about MongoDB [click here](https://www.notion.so/MongoDB-Node-Driver-Node-js-Cheat-Sheet-30af79111465430980b7e7828c8e8f65). It contains how to create, read, filter, update, delete, CRUD, index, aggregate, geolocation, geospatial etc
 - MongoDB above also shows how to do pagination
+- Web Components helps you:
+0. Why use web components? Helps us to encapsulate logic + UI. Making it re-usable across Page, Apps and Projects. Like allowing different frameworks like Angular or Vue to use it. For more info, [click here](https://www.webcomponents.org)
+1. Write custom HTML Element like `<my-tooltip text="some info">What?</my-tooltip>`
+2. Create Shadow DOM to separate DOM node tree for your HTML elements (including scoped CSS styles). e.g. Other H1 tags styling will not affect out H1 tags styling.
+3. Create HTML Templates & Slots that you can add to your HTML elements.
+4. Create HTML imports specifications (discontinued)
