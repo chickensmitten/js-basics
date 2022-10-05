@@ -734,6 +734,28 @@ For more on this, [click here](https://developer.mozilla.org/en-US/docs/Web/Java
 - Organize data and logic in objects (properties + methods)
 - Organize code in logical entities like in real world terms
 
+## Data Structures and Algorithms
+- When using loops and recursion with potentially large data sets, should use the most efficient algorithm to get result so that it saves CPU operations hence time.
+![time-complexity](/public/time-complexity.png)
+- O(1) aka constant time complexity. Examples are `push()`
+- O(n) aka linear time complexity. Examples are `sumUp()`
+- O(n^2) aka quadratic time complexity. This should be avoided. Examples are `sort()`
+- O(log n) aka logarithmic time complexity. Examples are `bingSearch()`
+- A JS github repo on [JS algorithms](https://github.com/trekhleb/javascript-algorithms)
+- More on [algorithms & data structures](https://adrianmejia.com/how-you-can-change-the-world-learning-data-structures-algorithms-free-online-course-tutorial/)
+- Understanding [Time Complexity & Big O](https://adrianmejia.com/most-popular-algorithms-time-complexity-every-programmer-should-know-free-online-tutorial-course/)
+- More on [data structures](https://adrianmejia.com/data-structures-time-complexity-for-beginners-arrays-hashmaps-linked-lists-stacks-queues-tutorial/)
+
+**The Big O Notation**
+- It is written as O(n). Basically, it means that the time complexity grows linearly, and not exponentially. Linear Time Complexity.
+- Quadratic Time Complexity or O(n^2) is very bad.
+- For code example on this, [click here](/27_big-o-notation/alg-1-minimum.js)
+
+**Data Structures**
+- Anything that stores data like objects, maps, sets, array are data structures.
+- The way you store your data or the data structure, affects the time complexity.
+- For code example on this, [click here](/27_big-o-notation/data-structures.js)
+
 ## Grab Bag
 - For a JS basic practice project on how to share location with google map, [click here](/21_practice-js-basic-project/)
 1. first run `npm run build:dev`
