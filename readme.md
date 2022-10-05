@@ -719,6 +719,20 @@ For more on this, [click here](https://developer.mozilla.org/en-US/docs/Web/Java
 - For code example, [click here](/25_performance-and-optmization/src/optimized/). Compare the optimized folder with not optimized folder.
 - For JS server-side performance optimizations, [click here](/documentation/19_server-side-performance-optimization.md). In short, use compression of served assets, caching in client side and server side and HTTP/2. 
 
+## Programming Paradigms
+- For code comparison example between different programming paradigms, [click here](/26_paradigms-procedural-oop-functional/)
+
+**Procedural**
+- write sequential series of execution steps/ tasks
+- top to bottom code execution
+
+**Functional**
+- organize code in functions (ideally pure functions) with clearly defined tasks
+- pass data around via parameters
+
+**Object-oriented**
+- Organize data and logic in objects (properties + methods)
+- Organize code in logical entities like in real world terms
 
 ## Grab Bag
 - For a JS basic practice project on how to share location with google map, [click here](/21_practice-js-basic-project/)
